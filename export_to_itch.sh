@@ -1,5 +1,7 @@
 #! /bin/bash
 
+## WARNIG SudOku  dont run this you dont have it set up 
+
 project_name=""
 
 godot --export-release "Web" ./exports/web/index.html
