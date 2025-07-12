@@ -1,14 +1,32 @@
-[gd_scene load_steps=4 format=3 uid="uid://b31dsikhx38qu"]
+[gd_scene load_steps=6 format=3 uid="uid://b31dsikhx38qu"]
 
 [ext_resource type="PackedScene" uid="uid://byrx74x5p6wc1" path="res://scenes/ldtk/levels.ldtk" id="1_2yu1p"]
 [ext_resource type="Script" uid="uid://50pu1o70bm0e" path="res://scenes/root/root.gd" id="1_f1tf0"]
 [ext_resource type="PackedScene" uid="uid://baesac2h34rm3" path="res://scenes/dev/dev_level.tscn" id="3_cj6gr"]
+[ext_resource type="PackedScene" uid="uid://m4wg7r24y6en" path="res://scenes/Player/player.tscn" id="4_3sdhb"]
+
+[sub_resource type="Gradient" id="Gradient_3sdhb"]
+offsets = PackedFloat32Array(0, 0.3, 0.415663, 0.584337, 1)
+colors = PackedColorArray(0.176471, 0.254902, 0.431373, 1, 0.360289, 0.290146, 0.526272, 1, 0.561593, 0.35343, 0.609037, 1, 0.970729, 0.792563, 0.670947, 1, 1, 1, 1, 1)
 
 [node name="Root" type="Node" groups=["Root"]]
 script = ExtResource("1_f1tf0")
 ldtk_world = ExtResource("1_2yu1p")
 dev_world = ExtResource("3_cj6gr")
-is_dev = true
+player_scene = ExtResource("4_3sdhb")
+player_spawn_pos = Vector2(180, 300)
+sky_color_ovre_time = SubResource("Gradient_3sdhb")
 
 [node name="World" type="Node2D" parent="." groups=["World"]]
 unique_name_in_owner = true
+
+[node name="Sun" type="DirectionalLight2D" parent="."]
+unique_name_in_owner = true
+rotation = 0.785398
+color = Color(0.960784, 0.858824, 0.576471, 1)
+energy = 0.1
+shadow_enabled = true
+
+[node name="ScreenTint" type="CanvasModulate" parent="."]
+unique_name_in_owner = true
+color = Color(0.664177, 0.664177, 0.664177, 1)
