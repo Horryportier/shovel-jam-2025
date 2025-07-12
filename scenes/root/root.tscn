@@ -1,11 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://b31dsikhx38qu"]
+[gd_scene load_steps=4 format=3 uid="uid://b31dsikhx38qu"]
 
 [ext_resource type="PackedScene" uid="uid://byrx74x5p6wc1" path="res://scenes/ldtk/levels.ldtk" id="1_2yu1p"]
 [ext_resource type="Script" uid="uid://50pu1o70bm0e" path="res://scenes/root/root.gd" id="1_f1tf0"]
+[ext_resource type="PackedScene" uid="uid://baesac2h34rm3" path="res://scenes/dev/dev_level.tscn" id="3_cj6gr"]
 
 [node name="Root" type="Node" groups=["Root"]]
 script = ExtResource("1_f1tf0")
 ldtk_world = ExtResource("1_2yu1p")
+dev_world = ExtResource("3_cj6gr")
+is_dev = true
 
 [node name="World" type="Node2D" parent="." groups=["World"]]
 unique_name_in_owner = true
