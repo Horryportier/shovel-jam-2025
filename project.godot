@@ -12,8 +12,13 @@ config_version=5
 
 config/name="shovel-jam-2025"
 config/tags=PackedStringArray("collaboration", "jam")
+run/main_scene="uid://b31dsikhx38qu"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/ldtk-importer/plugin.cfg")
 
 [file_customization]
 
@@ -25,4 +30,35 @@ folder_colors={
 "res://resources/": "red",
 "res://scenes/": "green",
 "res://scripts/": "yellow"
+}
+
+[global_group]
+
+Root=""
+World=""
+
+[importer_defaults]
+
+ldtk.import={
+"Debug": "",
+"Entity": "",
+"Layer": "",
+"Level": "",
+"Post Import": "",
+"Tileset": "",
+"World": "",
+"atlas_texture_type": 0,
+"entities_post_import": "uid://dbwyda6v4icq4",
+"force_tileset_reimport": false,
+"group_world_layers": false,
+"integer_grid_tilesets": false,
+"layers_always_visible": false,
+"level_post_import": "",
+"pack_levels": true,
+"resolve_entityrefs": true,
+"tileset_custom_data": false,
+"tileset_post_import": "",
+"use_entity_placeholders": false,
+"verbose_output": false,
+"world_post_import": ""
 }

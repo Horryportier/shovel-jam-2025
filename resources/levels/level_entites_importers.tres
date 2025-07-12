@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="LdtkEntityImporters" load_steps=3 format=3 uid="uid://705g14mxrfbn"]
+
+[ext_resource type="Script" uid="uid://cco54qh1yi8uh" path="res://scripts/Importers/entitiy_importer.gd" id="1_qsfnc"]
+[ext_resource type="Script" uid="uid://djh4l8ie3nn5h" path="res://scripts/Importers/entitiy_imorters.gd" id="2_lqbd1"]
+
+[resource]
+script = ExtResource("2_lqbd1")
+enum_importers = Dictionary[String, Script]({})
+importers = Dictionary[String, ExtResource("1_qsfnc")]({})
+metadata/_custom_type_script = "uid://djh4l8ie3nn5h"
