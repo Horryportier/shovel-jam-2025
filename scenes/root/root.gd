@@ -43,4 +43,3 @@ func _ready() -> void:
 	level_loaded.emit()
 	
 	screen_tint.color = sky_color_ovre_time.sample(1)
-

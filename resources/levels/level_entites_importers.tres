@@ -18,24 +18,24 @@ add_node = true
 add_node_param_name = ""
 metadata/_custom_type_script = "uid://cco54qh1yi8uh"
 
-[sub_resource type="Resource" id="Resource_1rydy"]
-script = ExtResource("1_qsfnc")
-enable = true
-entity_id = "PlayerStartPos"
-entity_type = 0
-scene = ExtResource("3_bblh8")
-entity_params_map = Dictionary[String, String]({})
-level_data_params = Dictionary[String, String]({})
-add_node = true
-add_node_param_name = ""
-metadata/_custom_type_script = "uid://cco54qh1yi8uh"
-
 [sub_resource type="Resource" id="Resource_lgj6m"]
 script = ExtResource("1_qsfnc")
 enable = true
 entity_id = "Gyser"
 entity_type = 0
 scene = ExtResource("4_gqcgg")
+entity_params_map = Dictionary[String, String]({})
+level_data_params = Dictionary[String, String]({})
+add_node = true
+add_node_param_name = ""
+metadata/_custom_type_script = "uid://cco54qh1yi8uh"
+
+[sub_resource type="Resource" id="Resource_1rydy"]
+script = ExtResource("1_qsfnc")
+enable = true
+entity_id = "PlayerStartPos"
+entity_type = 0
+scene = ExtResource("3_bblh8")
 entity_params_map = Dictionary[String, String]({})
 level_data_params = Dictionary[String, String]({})
 add_node = true
