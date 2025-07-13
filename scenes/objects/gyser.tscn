@@ -1,0 +1,58 @@
+[gd_scene load_steps=10 format=3 uid="uid://b173wg5go8uki"]
+
+[ext_resource type="Script" uid="uid://dfg8j7q7wo1tm" path="res://scenes/objects/gyser.gd" id="1_abyy6"]
+[ext_resource type="Texture2D" uid="uid://cqdcjrg5v22g5" path="res://assets/tilemaps/tilemap1.png" id="1_srtq5"]
+[ext_resource type="Texture2D" uid="uid://e5vivkxavsi3" path="res://assets/particles/gyser_particles.png" id="2_abyy6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6c8qd"]
+atlas = ExtResource("1_srtq5")
+region = Rect2(256, 224, 32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yq1i3"]
+size = Vector2(20, 112)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_dfayj"]
+particles_animation = true
+particles_anim_h_frames = 3
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_o7ljm"]
+offsets = PackedFloat32Array(0, 0.48, 1)
+colors = PackedColorArray(0.513726, 0.772549, 0.811765, 1, 0.745098, 0.984314, 0.984314, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_bnxhf"]
+gradient = SubResource("Gradient_o7ljm")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6e5jx"]
+lifetime_randomness = 0.1
+particle_flag_disable_z = true
+angle_min = -720.0
+angle_max = 720.0
+spread = 180.0
+initial_velocity_max = 10.0
+gravity = Vector3(0, -90, 0)
+color_initial_ramp = SubResource("GradientTexture1D_bnxhf")
+anim_offset_max = 1.0
+
+[node name="Gyser" type="Node2D"]
+script = ExtResource("1_abyy6")
+up_force = -1000.0
+on_time = 4.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_6c8qd")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -40)
+shape = SubResource("RectangleShape2D_yq1i3")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_dfayj")
+position = Vector2(0, 8)
+amount = 30
+texture = ExtResource("2_abyy6")
+lifetime = 1.5
+process_material = SubResource("ParticleProcessMaterial_6e5jx")
