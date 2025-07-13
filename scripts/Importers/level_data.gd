@@ -12,7 +12,7 @@ signal level_started
 		if is_level_beaten:
 			level_beaten.emit()
 
-var _entities: Array
+@export var _entities: Array
 
 func _ready() -> void:
 	pass

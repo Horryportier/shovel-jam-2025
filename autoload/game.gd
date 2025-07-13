@@ -10,6 +10,8 @@ var player: CharacterBody2D:
 			player_changed.emit()
 		
 
+var current_spawn_point: int = 1
+
 func set_player(new_player: CharacterBody2D) -> void:
 	player = new_player
 

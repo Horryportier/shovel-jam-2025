@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="LdtkEntityImporters" load_steps=9 format=3 uid="uid://705g14mxrfbn"]
+[gd_resource type="Resource" script_class="LdtkEntityImporters" load_steps=11 format=3 uid="uid://705g14mxrfbn"]
 
 [ext_resource type="Script" uid="uid://cco54qh1yi8uh" path="res://scripts/Importers/entitiy_importer.gd" id="1_qsfnc"]
 [ext_resource type="PackedScene" uid="uid://b6miotaofgpuu" path="res://scenes/objects/camera_hook.tscn" id="2_bblh8"]
 [ext_resource type="Script" uid="uid://djh4l8ie3nn5h" path="res://scripts/Importers/entitiy_imorters.gd" id="2_lqbd1"]
 [ext_resource type="PackedScene" uid="uid://cu7epean3unur" path="res://scenes/objects/player_start_pos.tscn" id="3_bblh8"]
 [ext_resource type="PackedScene" uid="uid://b173wg5go8uki" path="res://scenes/objects/gyser.tscn" id="4_gqcgg"]
+[ext_resource type="PackedScene" uid="uid://cn8beiqqw46af" path="res://scenes/objects/safe_point.tscn" id="5_1rydy"]
 
 [sub_resource type="Resource" id="Resource_gqcgg"]
 script = ExtResource("1_qsfnc")
@@ -14,7 +15,7 @@ entity_type = 0
 scene = ExtResource("2_bblh8")
 entity_params_map = Dictionary[String, String]({})
 level_data_params = Dictionary[String, String]({})
-add_node = true
+add_node = false
 add_node_param_name = ""
 metadata/_custom_type_script = "uid://cco54qh1yi8uh"
 
@@ -26,7 +27,7 @@ entity_type = 0
 scene = ExtResource("4_gqcgg")
 entity_params_map = Dictionary[String, String]({})
 level_data_params = Dictionary[String, String]({})
-add_node = true
+add_node = false
 add_node_param_name = ""
 metadata/_custom_type_script = "uid://cco54qh1yi8uh"
 
@@ -38,7 +39,21 @@ entity_type = 0
 scene = ExtResource("3_bblh8")
 entity_params_map = Dictionary[String, String]({})
 level_data_params = Dictionary[String, String]({})
-add_node = true
+add_node = false
+add_node_param_name = ""
+metadata/_custom_type_script = "uid://cco54qh1yi8uh"
+
+[sub_resource type="Resource" id="Resource_m4fqp"]
+script = ExtResource("1_qsfnc")
+enable = true
+entity_id = "SafePoint"
+entity_type = 0
+scene = ExtResource("5_1rydy")
+entity_params_map = Dictionary[String, String]({
+"SafePointId": "safe_point_id"
+})
+level_data_params = Dictionary[String, String]({})
+add_node = false
 add_node_param_name = ""
 metadata/_custom_type_script = "uid://cco54qh1yi8uh"
 
@@ -48,6 +63,7 @@ enum_importers = Dictionary[String, Script]({})
 importers = Dictionary[String, ExtResource("1_qsfnc")]({
 "CameraHook": SubResource("Resource_gqcgg"),
 "Gyser": SubResource("Resource_lgj6m"),
-"PlayerStartPos": SubResource("Resource_1rydy")
+"PlayerStartPos": SubResource("Resource_1rydy"),
+"SafePoint": SubResource("Resource_m4fqp")
 })
 metadata/_custom_type_script = "uid://djh4l8ie3nn5h"

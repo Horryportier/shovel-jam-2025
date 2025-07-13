@@ -26,5 +26,3 @@ metadata/_custom_type_script = "uid://y5evn5ws8lxx"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathDetectorCommponent"]
 shape = SubResource("CircleShape2D_c4h5g")
-
-[connection signal="collided_with_death" from="DeathDetectorCommponent" to="." method="_on_death_detector_commponent_collided_with_death"]

@@ -18,7 +18,6 @@ signal level_loaded
 
 
 
-var player: CharacterBody2D
 
 var time: float
 
@@ -32,7 +31,7 @@ func _ready() -> void:
 		var levels: =  ldtk_world.instantiate()
 		levels.add_to_group("Levels")
 		world.add_child(levels)
-		player = player_scene.instantiate()
+		var player: = player_scene.instantiate()
 		player.add_to_group("Player")
 		player.global_position = player_spawn_pos
 		world.add_child(player)
@@ -41,5 +40,14 @@ func _ready() -> void:
 		if is_instance_valid(start_pos):
 			player.global_position = start_pos.global_position
 	level_loaded.emit()
-	
+	Game.player_died.connect(_on_player_died)
 	screen_tint.color = sky_color_ovre_time.sample(1)
+
+func _on_player_died() -> void:
+	var player = Game.get_player()
+	var safe_points: =  get_tree().get_nodes_in_group("SafePoint")
+	var filteled: = safe_points.filter(func (x: Node) -> bool: return x.safe_point_id == Game.current_spawn_point)
+	if filteled.is_empty():
+		player.global_position = get_tree().get_first_node_in_group("PlayerStartPos").global_position
+	else:
+		player.global_position = filteled.front().global_position

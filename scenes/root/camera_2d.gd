@@ -9,6 +9,7 @@ func _ready() -> void:
 
 func _on_level_loaded() -> void:
 	hooks = get_tree().get_nodes_in_group("CameraHook")
+	global_position = _find_closest_point()
 
 func _find_closest_point() -> Vector2:
 	var player = Game.get_player()
