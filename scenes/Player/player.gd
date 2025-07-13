@@ -27,3 +27,4 @@ func _physics_process(delta: float) -> void:
 
 func _on_death_detector_commponent_collided_with_death() -> void:
 	print("DIED")
+	get_tree().reload_current_scene()
