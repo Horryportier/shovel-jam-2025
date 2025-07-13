@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://b31dsikhx38qu"]
+[gd_scene load_steps=7 format=3 uid="uid://b31dsikhx38qu"]
 
 [ext_resource type="PackedScene" uid="uid://byrx74x5p6wc1" path="res://scenes/ldtk/levels.ldtk" id="1_2yu1p"]
 [ext_resource type="Script" uid="uid://50pu1o70bm0e" path="res://scenes/root/root.gd" id="1_f1tf0"]
 [ext_resource type="PackedScene" uid="uid://baesac2h34rm3" path="res://scenes/dev/dev_level.tscn" id="3_cj6gr"]
 [ext_resource type="PackedScene" uid="uid://m4wg7r24y6en" path="res://scenes/Player/player.tscn" id="4_3sdhb"]
+[ext_resource type="Script" uid="uid://i8ywqsrksua" path="res://scenes/root/camera_2d.gd" id="5_rskmp"]
 
 [sub_resource type="Gradient" id="Gradient_3sdhb"]
 offsets = PackedFloat32Array(0, 0.3, 0.415663, 0.584337, 1)
@@ -32,3 +33,7 @@ unique_name_in_owner = true
 color = Color(0.664177, 0.664177, 0.664177, 1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("5_rskmp")
+
+[node name="Marker2D" type="Marker2D" parent="." groups=["CameraHook"]]
+position = Vector2(1123, 34)
