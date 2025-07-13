@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b173wg5go8uki"]
+[gd_scene load_steps=12 format=3 uid="uid://b173wg5go8uki"]
 
 [ext_resource type="Script" uid="uid://dfg8j7q7wo1tm" path="res://scenes/objects/gyser.gd" id="1_abyy6"]
 [ext_resource type="Texture2D" uid="uid://cqdcjrg5v22g5" path="res://assets/tilemaps/tilemap1.png" id="1_srtq5"]
@@ -24,6 +24,13 @@ colors = PackedColorArray(0.513726, 0.772549, 0.811765, 1, 0.745098, 0.984314, 0
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_bnxhf"]
 gradient = SubResource("Gradient_o7ljm")
 
+[sub_resource type="Curve" id="Curve_abyy6"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.330631, 1), 0.0, 0.0, 0, 0, Vector2(0.91546, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_6c8qd"]
+curve = SubResource("Curve_abyy6")
+
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6e5jx"]
 lifetime_randomness = 0.1
 particle_flag_disable_z = true
@@ -32,6 +39,7 @@ angle_max = 720.0
 spread = 180.0
 initial_velocity_max = 10.0
 gravity = Vector3(0, -90, 0)
+scale_curve = SubResource("CurveTexture_6c8qd")
 color_initial_ramp = SubResource("GradientTexture1D_bnxhf")
 anim_offset_max = 1.0
 
