@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://cu7epean3unur"]
+
+[node name="PlayerStartPos" type="Marker2D" groups=["PlayerStartPos"]]

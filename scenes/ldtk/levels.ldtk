@@ -1417,6 +1417,22 @@
 							"fieldInstances": [],
 							"__worldX": 640,
 							"__worldY": 368
+						},
+						{
+							"__identifier": "PlayerStartPos",
+							"__grid": [5,12],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#E43B44",
+							"iid": "03f119c0-5e50-11f0-b94a-11aa1b08caee",
+							"width": 32,
+							"height": 32,
+							"defUid": 51,
+							"px": [80,192],
+							"fieldInstances": [],
+							"__worldX": 80,
+							"__worldY": 192
 						}
 					]
 				},

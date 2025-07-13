@@ -37,6 +37,10 @@ func _ready() -> void:
 		player.global_position = player_spawn_pos
 		world.add_child(player)
 		Game.set_player(player)
+		var start_pos: Marker2D = get_tree().get_first_node_in_group("PlayerStartPos")
+		if is_instance_valid(start_pos):
+			player.global_position = start_pos.global_position
 	level_loaded.emit()
+	
 	screen_tint.color = sky_color_ovre_time.sample(1)
 

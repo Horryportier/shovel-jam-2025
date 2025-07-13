@@ -46,6 +46,7 @@ folder_colors={
 Root=""
 World=""
 CameraHook=""
+PlayerStartPos=""
 
 [importer_defaults]
 
