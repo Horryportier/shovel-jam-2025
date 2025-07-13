@@ -34,6 +34,3 @@ color = Color(0.664177, 0.664177, 0.664177, 1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 script = ExtResource("5_rskmp")
-
-[node name="Marker2D" type="Marker2D" parent="." groups=["CameraHook"]]
-position = Vector2(1123, 34)

@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://b6miotaofgpuu"]
+
+[node name="Marker2D" type="Marker2D" groups=["CameraHook"]]

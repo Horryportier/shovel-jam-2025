@@ -16,6 +16,10 @@ run/main_scene="uid://b31dsikhx38qu"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Game="*res://autoload/game.gd"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/ldtk-importer/plugin.cfg")
@@ -36,6 +40,7 @@ folder_colors={
 
 Root=""
 World=""
+CameraHook=""
 
 [importer_defaults]
 

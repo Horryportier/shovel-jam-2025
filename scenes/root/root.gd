@@ -1,5 +1,7 @@
 extends Node
 
+signal level_loaded
+
 @export_group("setup")
 @export var ldtk_world: PackedScene
 @export var dev_world: PackedScene
@@ -31,7 +33,10 @@ func _ready() -> void:
 		levels.add_to_group("Levels")
 		world.add_child(levels)
 		player = player_scene.instantiate()
+		player.add_to_group("Player")
 		player.global_position = player_spawn_pos
 		world.add_child(player)
+		Game.set_player(player)
+	level_loaded.emit()
 	screen_tint.color = sky_color_ovre_time.sample(1)
 

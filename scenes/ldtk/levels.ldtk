@@ -1334,7 +1334,7 @@
 					"entityInstances": [
 						{
 							"__identifier": "CameraHook",
-							"__grid": [32,16],
+							"__grid": [32,18],
 							"__pivot": [0,0],
 							"__tags": [],
 							"__tile": { "tilesetUid": 1, "x": 0, "y": 3168, "w": 32, "h": 32 },
@@ -1343,10 +1343,10 @@
 							"width": 32,
 							"height": 32,
 							"defUid": 35,
-							"px": [512,256],
+							"px": [512,288],
 							"fieldInstances": [],
 							"__worldX": 512,
-							"__worldY": 256
+							"__worldY": 288
 						}
 					]
 				},
