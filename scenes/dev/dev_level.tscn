@@ -11,11 +11,3 @@ tile_set = ExtResource("1_l6x1q")
 
 [node name="Player" parent="." instance=ExtResource("2_rrlp5")]
 position = Vector2(302, 112)
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(2, 2)
-limit_left = -2
-limit_bottom = 650
-limit_smoothed = true
-position_smoothing_enabled = true
-rotation_smoothing_enabled = true
