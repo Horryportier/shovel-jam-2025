@@ -11,4 +11,4 @@ func _ready() -> void:
 
 func _on_body_entered(_body: Node2D) -> void:
 	collided_with_death.emit()
-
+	print("Entered")

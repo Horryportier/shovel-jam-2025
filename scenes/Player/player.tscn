@@ -1,19 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://m4wg7r24y6en"]
+[gd_scene load_steps=6 format=3 uid="uid://m4wg7r24y6en"]
 
 [ext_resource type="Script" uid="uid://bgesxmcb4ocnt" path="res://scenes/Player/player.gd" id="1_1kbk7"]
-[ext_resource type="Texture2D" uid="uid://bu8nc6ue8lkv0" path="res://icon.svg" id="1_cyojo"]
+[ext_resource type="Texture2D" uid="uid://dv46nimxldd0c" path="res://assets/player/player_evo_0.png" id="2_1kbk7"]
+[ext_resource type="Script" uid="uid://y5evn5ws8lxx" path="res://scripts/Commponets/death_detect_commponent.gd" id="3_gqjuk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1kbk7"]
-radius = 19.0591
+radius = 13.1529
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c4h5g"]
+radius = 13.0384
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_1kbk7")
 
 [node name="PlayerIMG" type="Sprite2D" parent="."]
-position = Vector2(4.76837e-07, 0)
-scale = Vector2(0.3125, 0.298828)
-texture = ExtResource("1_cyojo")
+scale = Vector2(1.23698, 1.24569)
+texture = ExtResource("2_1kbk7")
 
 [node name="PlayerShape" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.5)
 shape = SubResource("CircleShape2D_1kbk7")
+
+[node name="DeathDetectorCommponent" type="Area2D" parent="."]
+script = ExtResource("3_gqjuk")
+metadata/_custom_type_script = "uid://y5evn5ws8lxx"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathDetectorCommponent"]
+shape = SubResource("CircleShape2D_c4h5g")
+
+[connection signal="collided_with_death" from="DeathDetectorCommponent" to="." method="_on_death_detector_commponent_collided_with_death"]
