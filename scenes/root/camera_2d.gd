@@ -1,5 +1,7 @@
 extends Camera2D
 
+@export var smoothing_exponent: float = -20
+
 var hooks: Array = []
 
 func _ready() -> void:
@@ -19,5 +21,5 @@ func _find_closest_point() -> Vector2:
 			closest = marker.global_position
 	return closest
 
-func _process(_delta: float) -> void:
-	global_position = _find_closest_point() 
+func _process(delta: float) -> void:
+	global_position = lerp(global_position,  _find_closest_point(), 1.0 - exp(smoothing_exponent * delta))
