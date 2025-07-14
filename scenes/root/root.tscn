@@ -17,6 +17,8 @@ ldtk_world = ExtResource("1_2yu1p")
 dev_world = ExtResource("3_cj6gr")
 player_evolutions = Array[PackedScene]([ExtResource("4_3sdhb"), ExtResource("4_rskmp")])
 player_spawn_pos = Vector2(180, 300)
+start_evo = 1
+satrt_safe_point = 2
 sky_color_ovre_time = SubResource("Gradient_3sdhb")
 
 [node name="World" type="Node2D" parent="." groups=["World"]]

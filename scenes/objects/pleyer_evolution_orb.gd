@@ -16,6 +16,6 @@ func _on_body_entered(body: Node2D) -> void:
 		get_tree().get_first_node_in_group("World").add_child(new_player)
 		var old_player = Game.player
 		Game.set_player(new_player)
-		old_player.queue_free()
+		old_player.queue_free.call_deferred()
 		Game.current_spawn_point = safe_point
 		queue_free()

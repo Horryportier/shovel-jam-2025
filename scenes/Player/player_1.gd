@@ -5,13 +5,14 @@ extends CharacterBody2D
 
 @export var speed: float = 320
 @export var jump_velocity: float = -640
+@export var crouch_jump_ratio: float = 1.5
 @export var cayote_jump: float = 0.1
 
 var can_jump: bool = true
 
 var cayote_timer: SceneTreeTimer
 
-
+var is_crouching: bool 
 
 func _physics_process(delta: float) -> void:
 	# Add gravity
@@ -26,7 +27,10 @@ func _physics_process(delta: float) -> void:
 			can_jump = true	# Jump
 
 	if Input.is_action_just_pressed("JUMP") and can_jump:
-		velocity.y = jump_velocity
+		if is_crouching:
+			velocity.y = jump_velocity * crouch_jump_ratio
+		else:
+			velocity.y = jump_velocity
 
 	# Movement
 	var direction := Input.get_axis("LEFT", "RIGHT")
@@ -35,9 +39,8 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 
-	# Crouch logic
-	if Input.is_action_pressed("CROUCH"):  # Replace with your own "CROUCH" action, like "crouch"
-		# Rotate to horizontal
+	is_crouching = Input.is_action_pressed("CROUCH")
+	if Input.is_action_pressed("CROUCH"):  
 		collision_shape.rotation = deg_to_rad(90)
 	else:
 		# Reset to vertical
