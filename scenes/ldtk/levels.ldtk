@@ -1508,22 +1508,6 @@
 					"gridTiles": [],
 					"entityInstances": [
 						{
-							"__identifier": "CameraHook",
-							"__grid": [72,23],
-							"__pivot": [0,0],
-							"__tags": [],
-							"__tile": { "tilesetUid": 1, "x": 0, "y": 3168, "w": 32, "h": 32 },
-							"__smartColor": "#2CE8F5",
-							"iid": "fa887d00-5e50-11f0-b94a-fbf9688148e5",
-							"width": 32,
-							"height": 32,
-							"defUid": 35,
-							"px": [1152,368],
-							"fieldInstances": [],
-							"__worldX": 640,
-							"__worldY": 368
-						},
-						{
 							"__identifier": "PlayerStartPos",
 							"__grid": [37,12],
 							"__pivot": [0,0],
@@ -1570,6 +1554,38 @@
 							"fieldInstances": [{ "__identifier": "SafePointId", "__type": "Int", "__value": 1, "__tile": null, "defUid": 56, "realEditorValues": [{ "id": "V_Int", "params": [1] }] }],
 							"__worldX": 128,
 							"__worldY": 192
+						},
+						{
+							"__identifier": "CameraHook",
+							"__grid": [46,17],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": { "tilesetUid": 1, "x": 0, "y": 3168, "w": 32, "h": 32 },
+							"__smartColor": "#2CE8F5",
+							"iid": "93ed3780-5e50-11f0-99c1-6f4cffe87fab",
+							"width": 32,
+							"height": 32,
+							"defUid": 35,
+							"px": [736,272],
+							"fieldInstances": [],
+							"__worldX": 224,
+							"__worldY": 272
+						},
+						{
+							"__identifier": "CameraHook",
+							"__grid": [72,18],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": { "tilesetUid": 1, "x": 0, "y": 3168, "w": 32, "h": 32 },
+							"__smartColor": "#2CE8F5",
+							"iid": "d35bece0-5e50-11f0-99c1-a17a3082405a",
+							"width": 32,
+							"height": 32,
+							"defUid": 35,
+							"px": [1152,288],
+							"fieldInstances": [],
+							"__worldX": 640,
+							"__worldY": 288
 						}
 					]
 				},
@@ -4523,22 +4539,6 @@
 					"gridTiles": [],
 					"entityInstances": [
 						{
-							"__identifier": "CameraHook",
-							"__grid": [21,23],
-							"__pivot": [0,0],
-							"__tags": [],
-							"__tile": { "tilesetUid": 1, "x": 0, "y": 3168, "w": 32, "h": 32 },
-							"__smartColor": "#2CE8F5",
-							"iid": "d9e3bfa0-5e50-11f0-b94a-2d9d35ddffdf",
-							"width": 32,
-							"height": 32,
-							"defUid": 35,
-							"px": [336,368],
-							"fieldInstances": [],
-							"__worldX": 1360,
-							"__worldY": 368
-						},
-						{
 							"__identifier": "Gyser",
 							"__grid": [49,19],
 							"__pivot": [0.5,0.5],
@@ -4553,6 +4553,38 @@
 							"fieldInstances": [],
 							"__worldX": 1808,
 							"__worldY": 304
+						},
+						{
+							"__identifier": "CameraHook",
+							"__grid": [6,16],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": { "tilesetUid": 1, "x": 0, "y": 3168, "w": 32, "h": 32 },
+							"__smartColor": "#2CE8F5",
+							"iid": "db032760-5e50-11f0-99c1-ddab0cf66a94",
+							"width": 32,
+							"height": 32,
+							"defUid": 35,
+							"px": [96,256],
+							"fieldInstances": [],
+							"__worldX": 1120,
+							"__worldY": 256
+						},
+						{
+							"__identifier": "CameraHook",
+							"__grid": [43,16],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": { "tilesetUid": 1, "x": 0, "y": 3168, "w": 32, "h": 32 },
+							"__smartColor": "#2CE8F5",
+							"iid": "e0c17da0-5e50-11f0-99c1-c17251a3ccd5",
+							"width": 32,
+							"height": 32,
+							"defUid": 35,
+							"px": [688,256],
+							"fieldInstances": [],
+							"__worldX": 1712,
+							"__worldY": 256
 						}
 					]
 				},
@@ -6885,7 +6917,24 @@
 					"seed": 7894095,
 					"overrideTilesetUid": null,
 					"gridTiles": [],
-					"entityInstances": []
+					"entityInstances": [
+						{
+							"__identifier": "CameraHook",
+							"__grid": [11,16],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": { "tilesetUid": 1, "x": 0, "y": 3168, "w": 32, "h": 32 },
+							"__smartColor": "#2CE8F5",
+							"iid": "16b34e20-5e50-11f0-99c1-756c09ad0023",
+							"width": 32,
+							"height": 32,
+							"defUid": 35,
+							"px": [176,256],
+							"fieldInstances": [],
+							"__worldX": 2224,
+							"__worldY": 256
+						}
+					]
 				},
 				{
 					"__identifier": "VIsual",
