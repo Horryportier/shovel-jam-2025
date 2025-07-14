@@ -21,6 +21,21 @@ add_node = false
 add_node_param_name = ""
 metadata/_custom_type_script = "uid://cco54qh1yi8uh"
 
+[sub_resource type="Resource" id="Resource_eeo3p"]
+script = ExtResource("1_qsfnc")
+enable = true
+entity_id = "EvolutionChamber"
+entity_type = 0
+scene = ExtResource("7_m4fqp")
+entity_params_map = Dictionary[String, String]({
+"EvoId": "next_evolution",
+"SafePointId": "safe_point"
+})
+level_data_params = Dictionary[String, String]({})
+add_node = true
+add_node_param_name = ""
+metadata/_custom_type_script = "uid://cco54qh1yi8uh"
+
 [sub_resource type="Resource" id="Resource_5cuvf"]
 script = ExtResource("1_qsfnc")
 enable = true
@@ -70,21 +85,6 @@ entity_params_map = Dictionary[String, String]({
 })
 level_data_params = Dictionary[String, String]({})
 add_node = false
-add_node_param_name = ""
-metadata/_custom_type_script = "uid://cco54qh1yi8uh"
-
-[sub_resource type="Resource" id="Resource_eeo3p"]
-script = ExtResource("1_qsfnc")
-enable = true
-entity_id = "EvolutionChamber"
-entity_type = 0
-scene = ExtResource("7_m4fqp")
-entity_params_map = Dictionary[String, String]({
-"EvoId": "next_evolution",
-"SafePointId": "safe_point"
-})
-level_data_params = Dictionary[String, String]({})
-add_node = true
 add_node_param_name = ""
 metadata/_custom_type_script = "uid://cco54qh1yi8uh"
 

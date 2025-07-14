@@ -9,5 +9,5 @@ func _ready() -> void:
 
 func _on_invincibility_timeout() -> void:
 	contact_monitor = true
-	max_contacts_reported = 10
-	body_entered.connect(func (_body: Node2D) -> void: queue_free())
+	max_contacts_reported = 100
+	body_entered.connect(func (_body: Node2D) -> void: await get_tree().create_timer(0.1).timeout; queue_free())

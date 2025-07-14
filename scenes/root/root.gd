@@ -9,6 +9,8 @@ signal level_loaded
 @export var is_dev: bool = false
 @export var player_evolutions: Array[PackedScene]
 @export var player_spawn_pos: Vector2
+@export var start_evo: int = 0
+@export var satrt_safe_point: int = 1
 @export_group("visual")
 @export var sky_color_ovre_time: Gradient
 @export var time_length: float
@@ -32,14 +34,15 @@ func _ready() -> void:
 		var levels: =  ldtk_world.instantiate()
 		levels.add_to_group("Levels")
 		world.add_child(levels)
-		var player: = player_evolutions[0].instantiate()
+		var player: = player_evolutions[start_evo].instantiate()
 		player.add_to_group("Player")
-		player.global_position = player_spawn_pos
+		Game.current_spawn_point = satrt_safe_point
 		world.add_child(player)
 		Game.set_player(player)
-		var start_pos: Marker2D = get_tree().get_first_node_in_group("PlayerStartPos")
-		if is_instance_valid(start_pos):
-			player.global_position = start_pos.global_position
+		#var start_pos: Marker2D = get_tree().get_first_node_in_group("PlayerStartPos")
+		#if is_instance_valid(start_pos):
+			#player.global_position = start_pos.global_position
+		_on_player_died()
 	level_loaded.emit()
 	Game.player_died.connect(_on_player_died)
 	screen_tint.color = sky_color_ovre_time.sample(1)
