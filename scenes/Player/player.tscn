@@ -1,28 +1,72 @@
-[gd_scene load_steps=6 format=3 uid="uid://m4wg7r24y6en"]
+[gd_scene load_steps=10 format=3 uid="uid://m4wg7r24y6en"]
 
 [ext_resource type="Script" uid="uid://bgesxmcb4ocnt" path="res://scenes/Player/player.gd" id="1_1kbk7"]
 [ext_resource type="Texture2D" uid="uid://dv46nimxldd0c" path="res://assets/player/player_evo_0.png" id="2_1kbk7"]
 [ext_resource type="Script" uid="uid://y5evn5ws8lxx" path="res://scripts/Commponets/death_detect_commponent.gd" id="3_gqjuk"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqjuk"]
+atlas = ExtResource("2_1kbk7")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4h5g"]
+atlas = ExtResource("2_1kbk7")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uiqp4"]
+atlas = ExtResource("2_1kbk7")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hvfru"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqjuk")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4h5g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uiqp4")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_1kbk7"]
-radius = 13.1529
+radius = 12.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c4h5g"]
-radius = 13.0384
+radius = 8.0
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 2
 script = ExtResource("1_1kbk7")
 
-[node name="PlayerIMG" type="Sprite2D" parent="."]
-scale = Vector2(1.23698, 1.24569)
-texture = ExtResource("2_1kbk7")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_hvfru")
+animation = &"walk"
+autoplay = "idle"
+frame_progress = 0.172614
 
 [node name="PlayerShape" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_1kbk7")
 
 [node name="DeathDetectorCommponent" type="Area2D" parent="."]
+collision_layer = 2
 script = ExtResource("3_gqjuk")
 metadata/_custom_type_script = "uid://y5evn5ws8lxx"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathDetectorCommponent"]
 shape = SubResource("CircleShape2D_c4h5g")
+debug_color = Color(0.97131, 0, 0.448826, 0.42)

@@ -52,6 +52,7 @@ on_time = 4.0
 texture = SubResource("AtlasTexture_6c8qd")
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -40)
