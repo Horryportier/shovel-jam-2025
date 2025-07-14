@@ -4,15 +4,25 @@ extends CharacterBody2D
 
 @export var speed: float = 160
 @export var jump_velocity: float = -320
+@export var cayote_jump: float = 0.1
 
+var can_jump: bool = true
+
+var cayote_timer: SceneTreeTimer
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
+		if cayote_timer == null:
+			cayote_timer = get_tree().create_timer(cayote_jump)
+			cayote_timer.timeout.connect(func () -> void: can_jump = false)
 		velocity += get_gravity() * delta
-
+	else: 
+		if cayote_timer != null:
+			cayote_timer = null
+			can_jump = true
 	# Handle jump.
-	if Input.is_action_just_pressed("JUMP") and is_on_floor():
+	if Input.is_action_just_pressed("JUMP") and can_jump:
 		velocity.y = jump_velocity
 
 	# Get the input direction and handle the movement/deceleration.

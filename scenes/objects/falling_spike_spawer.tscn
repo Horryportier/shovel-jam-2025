@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://buiqn1to0gxyd"]
+
+[ext_resource type="Script" uid="uid://ct4se8p2c1bc3" path="res://scenes/objects/falling_spike_spawer.gd" id="1_epw58"]
+[ext_resource type="PackedScene" uid="uid://cxixsx8andg17" path="res://scenes/objects/falling_spike.tscn" id="2_0rhxw"]
+[ext_resource type="Texture2D" uid="uid://cqdcjrg5v22g5" path="res://assets/tilemaps/tilemap1.png" id="2_ew4ia"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0rhxw"]
+atlas = ExtResource("2_ew4ia")
+region = Rect2(32, 320, 32, 64)
+
+[node name="FallingSpikeSpawer" type="Node2D"]
+script = ExtResource("1_epw58")
+spawn_timer = 5.0
+spike_scene = ExtResource("2_0rhxw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_0rhxw")
+offset = Vector2(0, 32)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
