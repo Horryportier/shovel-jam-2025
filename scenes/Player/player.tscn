@@ -60,6 +60,7 @@ autoplay = "idle"
 frame_progress = 0.172614
 
 [node name="PlayerShape" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CircleShape2D_1kbk7")
 
 [node name="DeathDetectorCommponent" type="Area2D" parent="."]
@@ -68,5 +69,6 @@ script = ExtResource("3_gqjuk")
 metadata/_custom_type_script = "uid://y5evn5ws8lxx"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathDetectorCommponent"]
+visible = false
 shape = SubResource("CircleShape2D_c4h5g")
 debug_color = Color(0.97131, 0, 0.448826, 0.42)

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="LdtkEntityImporters" load_steps=13 format=3 uid="uid://705g14mxrfbn"]
+[gd_resource type="Resource" script_class="LdtkEntityImporters" load_steps=15 format=3 uid="uid://705g14mxrfbn"]
 
 [ext_resource type="Script" uid="uid://cco54qh1yi8uh" path="res://scripts/Importers/entitiy_importer.gd" id="1_qsfnc"]
 [ext_resource type="PackedScene" uid="uid://b6miotaofgpuu" path="res://scenes/objects/camera_hook.tscn" id="2_bblh8"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b173wg5go8uki" path="res://scenes/objects/gyser.tscn" id="4_gqcgg"]
 [ext_resource type="PackedScene" uid="uid://cn8beiqqw46af" path="res://scenes/objects/safe_point.tscn" id="5_1rydy"]
 [ext_resource type="PackedScene" uid="uid://buiqn1to0gxyd" path="res://scenes/objects/falling_spike_spawer.tscn" id="6_lgj6m"]
+[ext_resource type="PackedScene" uid="uid://birhjowx6beqj" path="res://scenes/objects/pleyer_evolution_orb.tscn" id="7_m4fqp"]
 
 [sub_resource type="Resource" id="Resource_gqcgg"]
 script = ExtResource("1_qsfnc")
@@ -17,6 +18,20 @@ scene = ExtResource("2_bblh8")
 entity_params_map = Dictionary[String, String]({})
 level_data_params = Dictionary[String, String]({})
 add_node = false
+add_node_param_name = ""
+metadata/_custom_type_script = "uid://cco54qh1yi8uh"
+
+[sub_resource type="Resource" id="Resource_5cuvf"]
+script = ExtResource("1_qsfnc")
+enable = true
+entity_id = "FallingSpike"
+entity_type = 0
+scene = ExtResource("6_lgj6m")
+entity_params_map = Dictionary[String, String]({
+"SpawnDuration": "spawn_timer"
+})
+level_data_params = Dictionary[String, String]({})
+add_node = true
 add_node_param_name = ""
 metadata/_custom_type_script = "uid://cco54qh1yi8uh"
 
@@ -58,14 +73,15 @@ add_node = false
 add_node_param_name = ""
 metadata/_custom_type_script = "uid://cco54qh1yi8uh"
 
-[sub_resource type="Resource" id="Resource_5cuvf"]
+[sub_resource type="Resource" id="Resource_eeo3p"]
 script = ExtResource("1_qsfnc")
 enable = true
-entity_id = "FallingSpike"
+entity_id = "EvolutionChamber"
 entity_type = 0
-scene = ExtResource("6_lgj6m")
+scene = ExtResource("7_m4fqp")
 entity_params_map = Dictionary[String, String]({
-"SpawnDuration": "spawn_timer"
+"EvoId": "next_evolution",
+"SafePointId": "safe_point"
 })
 level_data_params = Dictionary[String, String]({})
 add_node = true
@@ -77,6 +93,7 @@ script = ExtResource("2_lqbd1")
 enum_importers = Dictionary[String, Script]({})
 importers = Dictionary[String, ExtResource("1_qsfnc")]({
 "CameraHook": SubResource("Resource_gqcgg"),
+"EvolutionChamber": SubResource("Resource_eeo3p"),
 "FallingSpike": SubResource("Resource_5cuvf"),
 "Gyser": SubResource("Resource_lgj6m"),
 "PlayerStartPos": SubResource("Resource_1rydy"),

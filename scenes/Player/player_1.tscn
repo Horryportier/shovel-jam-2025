@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://c1cwodf5nvspg"]
+
+[ext_resource type="Script" uid="uid://gxnxgriwba60" path="res://scenes/Player/player_1.gd" id="1_4hr2b"]
+[ext_resource type="Texture2D" uid="uid://bu8nc6ue8lkv0" path="res://icon.svg" id="2_yh5ok"]
+[ext_resource type="Script" uid="uid://y5evn5ws8lxx" path="res://scripts/Commponets/death_detect_commponent.gd" id="3_rf38d"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yh5ok"]
+radius = 14.0
+height = 40.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wwxro"]
+radius = 15.0333
+
+[node name="Player1" type="CharacterBody2D"]
+script = ExtResource("1_4hr2b")
+speed = 240.0
+jump_velocity = -360.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.3)
+texture = ExtResource("2_yh5ok")
+offset = Vector2(0, -64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -20)
+shape = SubResource("CapsuleShape2D_yh5ok")
+
+[node name="DeathDetectorCommponent" type="Area2D" parent="."]
+collision_layer = 2
+script = ExtResource("3_rf38d")
+metadata/_custom_type_script = "uid://y5evn5ws8lxx"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathDetectorCommponent"]
+position = Vector2(0, -20)
+shape = SubResource("CircleShape2D_wwxro")
+debug_color = Color(0.97131, 0, 0.448826, 0.42)

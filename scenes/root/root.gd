@@ -1,3 +1,4 @@
+class_name GameRoot
 extends Node
 
 signal level_loaded
@@ -6,7 +7,7 @@ signal level_loaded
 @export var ldtk_world: PackedScene
 @export var dev_world: PackedScene
 @export var is_dev: bool = false
-@export var player_scene: PackedScene
+@export var player_evolutions: Array[PackedScene]
 @export var player_spawn_pos: Vector2
 @export_group("visual")
 @export var sky_color_ovre_time: Gradient
@@ -31,7 +32,7 @@ func _ready() -> void:
 		var levels: =  ldtk_world.instantiate()
 		levels.add_to_group("Levels")
 		world.add_child(levels)
-		var player: = player_scene.instantiate()
+		var player: = player_evolutions[0].instantiate()
 		player.add_to_group("Player")
 		player.global_position = player_spawn_pos
 		world.add_child(player)

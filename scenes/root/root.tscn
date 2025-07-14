@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b31dsikhx38qu"]
+[gd_scene load_steps=8 format=3 uid="uid://b31dsikhx38qu"]
 
 [ext_resource type="PackedScene" uid="uid://byrx74x5p6wc1" path="res://scenes/ldtk/levels.ldtk" id="1_2yu1p"]
 [ext_resource type="Script" uid="uid://50pu1o70bm0e" path="res://scenes/root/root.gd" id="1_f1tf0"]
 [ext_resource type="PackedScene" uid="uid://baesac2h34rm3" path="res://scenes/dev/dev_level.tscn" id="3_cj6gr"]
 [ext_resource type="PackedScene" uid="uid://m4wg7r24y6en" path="res://scenes/Player/player.tscn" id="4_3sdhb"]
+[ext_resource type="PackedScene" uid="uid://c1cwodf5nvspg" path="res://scenes/Player/player_1.tscn" id="4_rskmp"]
 [ext_resource type="Script" uid="uid://i8ywqsrksua" path="res://scenes/root/camera_2d.gd" id="5_rskmp"]
 
 [sub_resource type="Gradient" id="Gradient_3sdhb"]
@@ -14,7 +15,7 @@ colors = PackedColorArray(0.176471, 0.254902, 0.431373, 1, 0.360289, 0.290146, 0
 script = ExtResource("1_f1tf0")
 ldtk_world = ExtResource("1_2yu1p")
 dev_world = ExtResource("3_cj6gr")
-player_scene = ExtResource("4_3sdhb")
+player_evolutions = Array[PackedScene]([ExtResource("4_3sdhb"), ExtResource("4_rskmp")])
 player_spawn_pos = Vector2(180, 300)
 sky_color_ovre_time = SubResource("Gradient_3sdhb")
 
