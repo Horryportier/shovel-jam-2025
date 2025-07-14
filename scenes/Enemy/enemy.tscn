@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://jwmg1tl3nxb8"]
+
+[ext_resource type="Texture2D" uid="uid://bu8nc6ue8lkv0" path="res://icon.svg" id="1_84vye"]
+[ext_resource type="Script" uid="uid://0adr23a0sun3" path="res://scenes/Enemy/enemy.gd" id="1_vamnb"]
+[ext_resource type="Script" uid="uid://vljncnon2nfc" path="res://scripts/Commponets/hurtbox.gd" id="2_vamnb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o5uld"]
+size = Vector2(65, 68)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_grfqg"]
+size = Vector2(63, 68)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eacat"]
+size = Vector2(65, 69)
+
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_vamnb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 5.68434e-14)
+scale = Vector2(0.546875, 0.570313)
+texture = ExtResource("1_84vye")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_o5uld")
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_grfqg")
+
+[node name="Hurtbox2D" type="Area2D" parent="."]
+script = ExtResource("2_vamnb")
+metadata/_custom_type_script = "uid://vljncnon2nfc"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox2D"]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_eacat")
+
+[node name="LEFT" type="RayCast2D" parent="."]
+target_position = Vector2(48, 0)
+
+[node name="RIGHT" type="RayCast2D" parent="."]
+target_position = Vector2(-48, 0)
