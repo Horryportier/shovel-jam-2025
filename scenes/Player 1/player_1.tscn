@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4ey80bxksg75"]
+
+[ext_resource type="Texture2D" uid="uid://bu8nc6ue8lkv0" path="res://icon.svg" id="1_7twyr"]
+[ext_resource type="Script" uid="uid://bua6qcou1uf3r" path="res://scenes/Player 1/player_1.gd" id="1_fta5y"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fta5y"]
+radius = 40.0
+height = 144.0
+
+[node name="Player_1" type="CharacterBody2D"]
+script = ExtResource("1_fta5y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.0625, 1.125)
+texture = ExtResource("1_7twyr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_fta5y")

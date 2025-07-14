@@ -14,6 +14,7 @@ colors = PackedColorArray(0.176471, 0.254902, 0.431373, 1, 0.360289, 0.290146, 0
 script = ExtResource("1_f1tf0")
 ldtk_world = ExtResource("1_2yu1p")
 dev_world = ExtResource("3_cj6gr")
+is_dev = true
 player_scene = ExtResource("4_3sdhb")
 player_spawn_pos = Vector2(180, 300)
 sky_color_ovre_time = SubResource("Gradient_3sdhb")
