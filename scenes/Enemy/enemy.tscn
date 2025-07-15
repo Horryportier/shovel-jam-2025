@@ -18,7 +18,7 @@ size = Vector2(90, 28)
 size = Vector2(90, 35)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eacat"]
-size = Vector2(42, 20)
+size = Vector2(31, 20)
 
 [sub_resource type="Animation" id="Animation_eacat"]
 length = 0.001
@@ -306,7 +306,7 @@ collision_layer = 4
 wall_min_slide_angle = 0.0
 script = ExtResource("1_vamnb")
 speed = 32
-player_detector_length = 70
+player_detector_length = 64
 attack_delay = 1.5
 
 [node name="HealthCommponet" type="Node" parent="."]
@@ -366,11 +366,10 @@ target_position = Vector2(64, 0)
 target_position = Vector2(-64, 0)
 
 [node name="PlayerDetector" type="RayCast2D" parent="."]
-target_position = Vector2(70, 0)
+target_position = Vector2(64, 0)
 collision_mask = 2
 
 [node name="Hitbox2D" type="Area2D" parent="."]
-visible = false
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("5_grfqg")
@@ -378,7 +377,7 @@ attack_info = 20
 metadata/_custom_type_script = "uid://jb5gmyd8qbfe"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox2D"]
-position = Vector2(41, 0)
+position = Vector2(35.5, 0)
 shape = SubResource("RectangleShape2D_eacat")
 disabled = true
 debug_color = Color(0.99978, 0, 0.101426, 0.42)
