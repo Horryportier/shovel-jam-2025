@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://wp40rxp54ljg"]
+
+[ext_resource type="Texture2D" uid="uid://bu8nc6ue8lkv0" path="res://icon.svg" id="1_it3bp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_poqsr"]
+size = Vector2(20, 22)
+
+[node name="GrabObject" type="RigidBody2D" groups=["Pickable"]]
+freeze = true
+freeze_mode = 1
+
+[node name="ObjImg" type="Sprite2D" parent="."]
+position = Vector2(9.53674e-07, -4.76837e-07)
+scale = Vector2(0.171875, 0.1875)
+texture = ExtResource("1_it3bp")
+
+[node name="Shape" type="CollisionShape2D" parent="." groups=["Pickable"]]
+shape = SubResource("RectangleShape2D_poqsr")

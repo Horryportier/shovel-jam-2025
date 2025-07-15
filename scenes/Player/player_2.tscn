@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://r5w88218meb1"]
+
+[ext_resource type="Script" uid="uid://8nqlrurw6tfh" path="res://scenes/Player/player_2.gd" id="1_l67ws"]
+[ext_resource type="Texture2D" uid="uid://bu8nc6ue8lkv0" path="res://icon.svg" id="1_v6wlc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ljpki"]
+size = Vector2(124, 126)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jetqy"]
+size = Vector2(13, 62)
+
+[node name="Player 2" type="CharacterBody2D"]
+script = ExtResource("1_l67ws")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_v6wlc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_ljpki")
+
+[node name="GrabPoint" type="Marker2D" parent="."]
+
+[node name="GrabArea" type="Area2D" parent="."]
+position = Vector2(73, 8)
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="GrabArea"]
+position = Vector2(1, 22)
+shape = SubResource("RectangleShape2D_jetqy")
