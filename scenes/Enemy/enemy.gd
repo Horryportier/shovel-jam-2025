@@ -7,9 +7,9 @@ var direction = 1
 @onready var right: RayCast2D = $RIGHT
 @onready var sprite: Sprite2D = $Sprite2D
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if !is_on_floor():
-		velocity += get_gravity() * delta
+		velocity += get_gravity() 
 	if right.is_colliding():
 		direction = 1
 		sprite.flip_h = true

@@ -14,7 +14,7 @@ size = Vector2(32, 32)
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 4
 script = ExtResource("1_vamnb")
-speed = 640
+speed = 32
 
 [node name="HealthCommponet" type="Node" parent="."]
 script = ExtResource("2_o5uld")
