@@ -7,7 +7,7 @@ var direction = 1
 
 @onready var left: RayCast2D = $LEFT
 @onready var right: RayCast2D = $RIGHT
-@onready var sprite: Sprite2D = $Sprite2D
+@onready var visual: Node2D = $Visual
 @onready var anim: AnimationPlayer = $AnimationPlayer
 
 @onready var player_detector: RayCast2D = $PlayerDetector
@@ -22,9 +22,10 @@ var is_attacking: bool
 func _ready() -> void:
 	anim.animation_finished.connect(_on_animation_finished)
 
-func _on_animation_finished(_name: String) -> void:
-	is_attacking = false
-	get_tree().create_timer(attack_delay).timeout.connect(func () -> void: can_attack = true)
+func _on_animation_finished(anim_name: String) -> void:
+	if anim_name == "attack":
+		is_attacking = false
+		get_tree().create_timer(attack_delay).timeout.connect(func () -> void: can_attack = true)
 
 func _physics_process(_delta: float) -> void:
 	if player_detector.is_colliding() and can_attack:
@@ -40,11 +41,14 @@ func _physics_process(_delta: float) -> void:
 		velocity += get_gravity() 
 	if right.is_colliding():
 		direction = 1
-		sprite.flip_h = true
+		visual.scale.x = 1
 	if left.is_colliding():
 		direction = -1
-		sprite.flip_h = false
-		
+		visual.scale.x = -1
+	if !anim.is_playing() and !velocity.is_zero_approx():
+		anim.play("walk")
+	elif !anim.is_playing() and velocity.is_zero_approx():
+		anim.play("RESET")
 	player_detector.target_position = Vector2(player_detector_length * direction, 0)
 	hitbox.scale = Vector2(direction, 1)
 	velocity.x = direction * speed 

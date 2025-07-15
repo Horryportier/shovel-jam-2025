@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://jwmg1tl3nxb8"]
+[gd_scene load_steps=18 format=3 uid="uid://jwmg1tl3nxb8"]
 
 [ext_resource type="Script" uid="uid://0adr23a0sun3" path="res://scenes/Enemy/enemy.gd" id="1_vamnb"]
 [ext_resource type="Script" uid="uid://qtjlvk576t6b" path="res://scripts/Commponets/health_commponet.gd" id="2_o5uld"]
@@ -9,15 +9,16 @@
 [ext_resource type="Script" uid="uid://jb5gmyd8qbfe" path="res://scripts/Commponets/hitbox.gd" id="5_grfqg"]
 [ext_resource type="Texture2D" uid="uid://dr6wcuu2xbahr" path="res://assets/enemy/crock_enemy_FLegBack_000.png" id="6_pg6jp"]
 [ext_resource type="Texture2D" uid="uid://bahnc1dcsio3i" path="res://assets/enemy/crock_enemy_FLegFront_000.png" id="7_lkp36"]
+[ext_resource type="Texture2D" uid="uid://b4n8j2q14rnr4" path="res://assets/enemy/crock_enemy_HeadTop_000.png" id="8_q0kbr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o5uld"]
-size = Vector2(32, 32)
+size = Vector2(90, 28)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_grfqg"]
-size = Vector2(32, 32)
+size = Vector2(90, 35)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eacat"]
-size = Vector2(64, 20)
+size = Vector2(42, 20)
 
 [sub_resource type="Animation" id="Animation_eacat"]
 length = 0.001
@@ -32,6 +33,126 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visual/CrockEnemyHeadTop000:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(30, -2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visual/CrockEnemyHeadTop000:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Visual/CrockEnemyFLegBack000:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(-0.0333333),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-16, 4)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Visual/CrockEnemyFLegBack000:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Visual/CrockEnemyBLegBack000:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-13, 4)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Visual/CrockEnemyBLegBack000:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Visual/CrockEnemyFLegFront000:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(12, 4)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Visual/CrockEnemyFLegFront000:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Visual/CrockEnemyBLegFront000:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(15, 3)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Visual/CrockEnemyBLegFront000:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_grfqg"]
@@ -48,18 +169,145 @@ tracks/0/keys = {
 "update": 1,
 "values": [true, false, true]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visual/CrockEnemyHeadTop000:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.69),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(30, -2), Vector2(30, -2), Vector2(30, -2)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visual/CrockEnemyHeadTop000:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.69),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -1.02182, 0.0315597]
+}
+
+[sub_resource type="Animation" id="Animation_q0kbr"]
+resource_name = "walk"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visual/CrockEnemyFLegBack000:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.46),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-16, 2), Vector2(-14, 5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visual/CrockEnemyFLegBack000:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.46),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.305275, -0.0487827]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visual/CrockEnemyBLegBack000:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.46),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-13, 4), Vector2(-13, 2)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Visual/CrockEnemyBLegBack000:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.46),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.100516, 0.443839]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Visual/CrockEnemyFLegFront000:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.46),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(12, 4), Vector2(12, 3)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Visual/CrockEnemyFLegFront000:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.46),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.185508, 0.512987]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Visual/CrockEnemyBLegFront000:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.46),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(15, 3), Vector2(15, 6)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Visual/CrockEnemyBLegFront000:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.46),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.167131, -0.221843]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_eacat"]
 _data = {
 &"RESET": SubResource("Animation_eacat"),
-&"attack": SubResource("Animation_grfqg")
+&"attack": SubResource("Animation_grfqg"),
+&"walk": SubResource("Animation_q0kbr")
 }
 
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 4
+wall_min_slide_angle = 0.0
 script = ExtResource("1_vamnb")
 speed = 32
-attack_delay = 2.0
+player_detector_length = 70
+attack_delay = 1.5
 
 [node name="HealthCommponet" type="Node" parent="."]
 script = ExtResource("2_o5uld")
@@ -73,7 +321,7 @@ texture = ExtResource("3_ebm38")
 offset = Vector2(6, 6)
 
 [node name="CrockEnemyBLegFront000" type="Sprite2D" parent="Visual"]
-position = Vector2(15, 4)
+position = Vector2(15, 3)
 texture = ExtResource("4_q0kbr")
 offset = Vector2(6, 6)
 
@@ -90,8 +338,14 @@ position = Vector2(12, 4)
 texture = ExtResource("7_lkp36")
 offset = Vector2(6, 6)
 
+[node name="CrockEnemyHeadTop000" type="Sprite2D" parent="Visual"]
+position = Vector2(30, -2)
+texture = ExtResource("8_q0kbr")
+offset = Vector2(6, 1)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
+position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_o5uld")
 
 [node name="Hurtbox2D" type="Area2D" parent="."]
@@ -101,20 +355,18 @@ script = ExtResource("2_vamnb")
 metadata/_custom_type_script = "uid://vljncnon2nfc"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox2D"]
+position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_grfqg")
 debug_color = Color(0.23733, 0.637015, 1.92523e-07, 0.42)
 
 [node name="LEFT" type="RayCast2D" parent="."]
-visible = false
-target_position = Vector2(48, 0)
+target_position = Vector2(64, 0)
 
 [node name="RIGHT" type="RayCast2D" parent="."]
-visible = false
-target_position = Vector2(-48, 0)
+target_position = Vector2(-64, 0)
 
 [node name="PlayerDetector" type="RayCast2D" parent="."]
-visible = false
-target_position = Vector2(100, 0)
+target_position = Vector2(70, 0)
 collision_mask = 2
 
 [node name="Hitbox2D" type="Area2D" parent="."]
@@ -126,7 +378,7 @@ attack_info = 20
 metadata/_custom_type_script = "uid://jb5gmyd8qbfe"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox2D"]
-position = Vector2(52, 0)
+position = Vector2(41, 0)
 shape = SubResource("RectangleShape2D_eacat")
 disabled = true
 debug_color = Color(0.99978, 0, 0.101426, 0.42)
