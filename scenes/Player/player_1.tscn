@@ -1,20 +1,59 @@
-[gd_scene load_steps=9 format=3 uid="uid://c1cwodf5nvspg"]
+[gd_scene load_steps=13 format=3 uid="uid://c1cwodf5nvspg"]
 
 [ext_resource type="Script" uid="uid://gxnxgriwba60" path="res://scenes/Player/player_1.gd" id="1_4hr2b"]
 [ext_resource type="Script" uid="uid://qtjlvk576t6b" path="res://scripts/Commponets/health_commponet.gd" id="2_wwxro"]
-[ext_resource type="Texture2D" uid="uid://bu8nc6ue8lkv0" path="res://icon.svg" id="2_yh5ok"]
+[ext_resource type="Texture2D" uid="uid://o1qnlvhlohn" path="res://assets/player/player_evo_1.png" id="3_ralg2"]
 [ext_resource type="Script" uid="uid://y5evn5ws8lxx" path="res://scripts/Commponets/death_detect_commponent.gd" id="3_rf38d"]
 [ext_resource type="Script" uid="uid://vljncnon2nfc" path="res://scripts/Commponets/hurtbox.gd" id="5_ralg2"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_jclmu"]
+atlas = ExtResource("3_ralg2")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ralg2"]
+atlas = ExtResource("3_ralg2")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sdiic"]
+atlas = ExtResource("3_ralg2")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wwxro"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jclmu")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ralg2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sdiic")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yh5ok"]
 radius = 14.0
-height = 40.0
+height = 28.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wwxro"]
-radius = 15.0333
+radius = 12.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jclmu"]
-radius = 16.0
+radius = 14.0357
 
 [node name="Player1" type="CharacterBody2D"]
 script = ExtResource("1_4hr2b")
@@ -26,13 +65,15 @@ script = ExtResource("2_wwxro")
 max_health = 50
 metadata/_custom_type_script = "uid://qtjlvk576t6b"
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.25, 0.3)
-texture = ExtResource("2_yh5ok")
-offset = Vector2(0, -64)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wwxro")
+animation = &"walk"
+autoplay = "idle"
+frame_progress = 0.72756
+offset = Vector2(0, -16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -20)
+position = Vector2(0, -15)
 shape = SubResource("CapsuleShape2D_yh5ok")
 
 [node name="DeathDetectorCommponent" type="Area2D" parent="."]

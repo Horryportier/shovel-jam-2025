@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 
 @onready var collision_shape = $CollisionShape2D  # Update this path if needed!
+@onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 
 @export var speed: float = 320
 @export var jump_velocity: float = -640
@@ -45,5 +46,9 @@ func _physics_process(delta: float) -> void:
 	else:
 		# Reset to vertical
 		collision_shape.rotation = deg_to_rad(0)
-
+	if velocity.is_zero_approx():
+		anim.play("idle")
+	else:
+		anim.play("walk")
+	anim.flip_h = velocity.x < 0
 	move_and_slide()
