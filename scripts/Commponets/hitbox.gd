@@ -35,6 +35,7 @@ func _on_area_entered(area: Area2D):
 		return
 	if enable:
 		hit_hurtbox.emit(area as Hurtbox2D)
+		area.take_dmg(attack_info)
 	if damage_repeat:
 		_hurtboxes.push_back(area)
 
@@ -47,5 +48,4 @@ func repeat_damage():
 	if not enable:
 		return 
 	for hurtbox in _hurtboxes:
-		hurtbox.take_dmg(hurtbox.get_final_dmg(attack_info))
-
+		hurtbox.take_dmg(attack_info)
