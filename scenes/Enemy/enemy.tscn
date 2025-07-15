@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://jwmg1tl3nxb8"]
+[gd_scene load_steps=12 format=3 uid="uid://jwmg1tl3nxb8"]
 
 [ext_resource type="Texture2D" uid="uid://bu8nc6ue8lkv0" path="res://icon.svg" id="1_84vye"]
 [ext_resource type="Script" uid="uid://0adr23a0sun3" path="res://scenes/Enemy/enemy.gd" id="1_vamnb"]
 [ext_resource type="Script" uid="uid://qtjlvk576t6b" path="res://scripts/Commponets/health_commponet.gd" id="2_o5uld"]
 [ext_resource type="Script" uid="uid://vljncnon2nfc" path="res://scripts/Commponets/hurtbox.gd" id="2_vamnb"]
+[ext_resource type="Script" uid="uid://jb5gmyd8qbfe" path="res://scripts/Commponets/hitbox.gd" id="5_grfqg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o5uld"]
 size = Vector2(32, 32)
@@ -11,10 +12,50 @@ size = Vector2(32, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_grfqg"]
 size = Vector2(32, 32)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eacat"]
+size = Vector2(64, 20)
+
+[sub_resource type="Animation" id="Animation_grfqg"]
+resource_name = "attack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hitbox2D/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+
+[sub_resource type="Animation" id="Animation_eacat"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hitbox2D/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eacat"]
+_data = {
+&"RESET": SubResource("Animation_eacat"),
+&"attack": SubResource("Animation_grfqg")
+}
+
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 4
 script = ExtResource("1_vamnb")
 speed = 32
+attack_delay = 2.0
 
 [node name="HealthCommponet" type="Node" parent="."]
 script = ExtResource("2_o5uld")
@@ -22,7 +63,7 @@ metadata/_custom_type_script = "uid://qtjlvk576t6b"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 5.68434e-14)
-scale = Vector2(0.25, 0.25)
+scale = Vector2(0.5, 0.25)
 texture = ExtResource("1_84vye")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -42,3 +83,25 @@ target_position = Vector2(48, 0)
 
 [node name="RIGHT" type="RayCast2D" parent="."]
 target_position = Vector2(-48, 0)
+
+[node name="PlayerDetector" type="RayCast2D" parent="."]
+target_position = Vector2(100, 0)
+collision_mask = 2
+
+[node name="Hitbox2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("5_grfqg")
+attack_info = 20
+metadata/_custom_type_script = "uid://jb5gmyd8qbfe"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox2D"]
+position = Vector2(52, 0)
+shape = SubResource("RectangleShape2D_eacat")
+disabled = true
+debug_color = Color(0.99978, 0, 0.101426, 0.42)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_eacat")
+}

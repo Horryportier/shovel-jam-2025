@@ -84,6 +84,7 @@ debug_color = Color(0.766197, 0.447862, 3.85046e-07, 0.42)
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("5_uiqp4")
+debug = true
 metadata/_custom_type_script = "uid://vljncnon2nfc"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox2D"]

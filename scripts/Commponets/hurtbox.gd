@@ -8,7 +8,7 @@ extends Area2D
 
 @export var debug = false
 
-var enable = true
+@export var enable = true
 
 signal dmg_applied
 
