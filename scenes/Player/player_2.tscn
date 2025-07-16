@@ -1,30 +1,87 @@
-[gd_scene load_steps=5 format=3 uid="uid://cmf0tu3rb8rv4"]
+[gd_scene load_steps=11 format=3 uid="uid://cmf0tu3rb8rv4"]
 
-[ext_resource type="Script" path="res://scenes/Player/player_2.gd" id="1_l67ws"]
-[ext_resource type="Texture2D" uid="uid://bu8nc6ue8lkv0" path="res://icon.svg" id="1_v6wlc"]
+[ext_resource type="Script" uid="uid://8nqlrurw6tfh" path="res://scenes/Player/player_2.gd" id="1_l67ws"]
+[ext_resource type="Texture2D" uid="uid://ri3mkt511m6h" path="res://assets/player/player_evo_2.png" id="2_l67ws"]
+[ext_resource type="Script" uid="uid://vljncnon2nfc" path="res://scripts/Commponets/hurtbox.gd" id="3_ikgcu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ljpki"]
-size = Vector2(124, 126)
+size = Vector2(22, 29.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jetqy"]
-size = Vector2(13, 62)
+size = Vector2(36, 23)
 
-[node name="Player 2" type="CharacterBody2D"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ikgcu"]
+atlas = ExtResource("2_l67ws")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_en5id"]
+atlas = ExtResource("2_l67ws")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lg01t"]
+atlas = ExtResource("2_l67ws")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vmwkb"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ikgcu")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_en5id")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lg01t")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_en5id"]
+radius = 12.0416
+
+[node name="Player 2" type="CharacterBody2D" groups=["Player"]]
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_l67ws")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_v6wlc")
+speed = 240.0
+jump_velocity = -360.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_ljpki")
 
 [node name="GrabPoint" type="Marker2D" parent="."]
-position = Vector2(-1, 0)
+position = Vector2(9, 1)
 
 [node name="GrabArea" type="Area2D" parent="."]
-position = Vector2(73, 8)
+collision_layer = 2
+collision_mask = 32
 
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="GrabArea"]
-position = Vector2(1, 22)
 shape = SubResource("RectangleShape2D_jetqy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_vmwkb")
+animation = &"walk"
+
+[node name="Hurtbox2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("3_ikgcu")
+metadata/_custom_type_script = "uid://vljncnon2nfc"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox2D"]
+shape = SubResource("CircleShape2D_en5id")
+debug_color = Color(0.40151, 0.608517, 1.92523e-07, 0.42)

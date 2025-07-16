@@ -55,7 +55,7 @@ radius = 12.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_jclmu"]
 radius = 14.0357
 
-[node name="Player1" type="CharacterBody2D"]
+[node name="Player1" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 2
 script = ExtResource("1_4hr2b")
 speed = 240.0

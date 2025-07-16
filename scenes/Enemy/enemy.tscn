@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://b4n8j2q14rnr4" path="res://assets/enemy/crock_enemy_HeadTop_000.png" id="8_q0kbr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o5uld"]
-size = Vector2(90, 28)
+size = Vector2(90, 36)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_grfqg"]
 size = Vector2(90, 35)
@@ -311,6 +311,7 @@ attack_delay = 1.5
 
 [node name="HealthCommponet" type="Node" parent="."]
 script = ExtResource("2_o5uld")
+max_health = 80
 metadata/_custom_type_script = "uid://qtjlvk576t6b"
 
 [node name="Visual" type="Node2D" parent="."]
@@ -344,8 +345,7 @@ texture = ExtResource("8_q0kbr")
 offset = Vector2(6, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(0, 8)
+position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_o5uld")
 
 [node name="Hurtbox2D" type="Area2D" parent="."]
@@ -386,3 +386,4 @@ debug_color = Color(0.99978, 0, 0.101426, 0.42)
 libraries = {
 &"": SubResource("AnimationLibrary_eacat")
 }
+speed_scale = 2.0

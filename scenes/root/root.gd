@@ -35,7 +35,6 @@ func _ready() -> void:
 		levels.add_to_group("Levels")
 		world.add_child(levels)
 		var player: = player_evolutions[start_evo].instantiate()
-		player.add_to_group("Player")
 		Game.current_spawn_point = satrt_safe_point
 		world.add_child(player)
 		Game.set_player(player)

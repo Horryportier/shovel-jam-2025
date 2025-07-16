@@ -1,21 +1,22 @@
-[gd_resource type="Resource" script_class="LdtkEntityImporters" load_steps=17 format=3 uid="uid://705g14mxrfbn"]
+[gd_resource type="Resource" script_class="LdtkEntityImporters" load_steps=19 format=3 uid="uid://705g14mxrfbn"]
 
-[ext_resource type="Script" uid="uid://cco54qh1yi8uh" path="res://scripts/Importers/entitiy_importer.gd" id="1_qsfnc"]
-[ext_resource type="PackedScene" uid="uid://b6miotaofgpuu" path="res://scenes/objects/camera_hook.tscn" id="2_bblh8"]
-[ext_resource type="Script" uid="uid://djh4l8ie3nn5h" path="res://scripts/Importers/entitiy_imorters.gd" id="2_lqbd1"]
-[ext_resource type="PackedScene" uid="uid://cu7epean3unur" path="res://scenes/objects/player_start_pos.tscn" id="3_bblh8"]
-[ext_resource type="PackedScene" uid="uid://b173wg5go8uki" path="res://scenes/objects/gyser.tscn" id="4_gqcgg"]
-[ext_resource type="PackedScene" uid="uid://cn8beiqqw46af" path="res://scenes/objects/safe_point.tscn" id="5_1rydy"]
-[ext_resource type="PackedScene" uid="uid://buiqn1to0gxyd" path="res://scenes/objects/falling_spike_spawer.tscn" id="6_lgj6m"]
-[ext_resource type="PackedScene" uid="uid://birhjowx6beqj" path="res://scenes/objects/pleyer_evolution_orb.tscn" id="7_m4fqp"]
-[ext_resource type="PackedScene" uid="uid://jwmg1tl3nxb8" path="res://scenes/Enemy/enemy.tscn" id="8_5cuvf"]
+[ext_resource type="Script" uid="uid://cco54qh1yi8uh" path="res://scripts/Importers/entitiy_importer.gd" id="1_fobrt"]
+[ext_resource type="PackedScene" uid="uid://b6miotaofgpuu" path="res://scenes/objects/camera_hook.tscn" id="2_a12pu"]
+[ext_resource type="PackedScene" uid="uid://jwmg1tl3nxb8" path="res://scenes/Enemy/enemy.tscn" id="3_dwaqa"]
+[ext_resource type="PackedScene" uid="uid://birhjowx6beqj" path="res://scenes/objects/pleyer_evolution_orb.tscn" id="4_ccjr4"]
+[ext_resource type="PackedScene" uid="uid://buiqn1to0gxyd" path="res://scenes/objects/falling_spike_spawer.tscn" id="5_wxxel"]
+[ext_resource type="PackedScene" uid="uid://b173wg5go8uki" path="res://scenes/objects/gyser.tscn" id="6_d0g52"]
+[ext_resource type="PackedScene" uid="uid://cu7epean3unur" path="res://scenes/objects/player_start_pos.tscn" id="7_yk1td"]
+[ext_resource type="PackedScene" uid="uid://cn8beiqqw46af" path="res://scenes/objects/safe_point.tscn" id="8_2olou"]
+[ext_resource type="PackedScene" uid="uid://wp40rxp54ljg" path="res://scenes/GrabObject/grab_object.tscn" id="9_uehib"]
+[ext_resource type="Script" uid="uid://djh4l8ie3nn5h" path="res://scripts/Importers/entitiy_imorters.gd" id="10_mjv05"]
 
 [sub_resource type="Resource" id="Resource_gqcgg"]
-script = ExtResource("1_qsfnc")
+script = ExtResource("1_fobrt")
 enable = true
 entity_id = "CameraHook"
 entity_type = 0
-scene = ExtResource("2_bblh8")
+scene = ExtResource("2_a12pu")
 entity_params_map = Dictionary[String, String]({})
 level_data_params = Dictionary[String, String]({})
 add_node = false
@@ -23,11 +24,11 @@ add_node_param_name = ""
 metadata/_custom_type_script = "uid://cco54qh1yi8uh"
 
 [sub_resource type="Resource" id="Resource_aa3ru"]
-script = ExtResource("1_qsfnc")
+script = ExtResource("1_fobrt")
 enable = true
 entity_id = ""
 entity_type = 0
-scene = ExtResource("8_5cuvf")
+scene = ExtResource("3_dwaqa")
 entity_params_map = Dictionary[String, String]({})
 level_data_params = Dictionary[String, String]({})
 add_node = true
@@ -35,11 +36,11 @@ add_node_param_name = ""
 metadata/_custom_type_script = "uid://cco54qh1yi8uh"
 
 [sub_resource type="Resource" id="Resource_eeo3p"]
-script = ExtResource("1_qsfnc")
+script = ExtResource("1_fobrt")
 enable = true
 entity_id = "EvolutionChamber"
 entity_type = 0
-scene = ExtResource("7_m4fqp")
+scene = ExtResource("4_ccjr4")
 entity_params_map = Dictionary[String, String]({
 "EvoId": "next_evolution",
 "SafePointId": "safe_point"
@@ -50,11 +51,11 @@ add_node_param_name = ""
 metadata/_custom_type_script = "uid://cco54qh1yi8uh"
 
 [sub_resource type="Resource" id="Resource_5cuvf"]
-script = ExtResource("1_qsfnc")
+script = ExtResource("1_fobrt")
 enable = true
 entity_id = "FallingSpike"
 entity_type = 0
-scene = ExtResource("6_lgj6m")
+scene = ExtResource("5_wxxel")
 entity_params_map = Dictionary[String, String]({
 "SpawnDuration": "spawn_timer"
 })
@@ -64,11 +65,11 @@ add_node_param_name = ""
 metadata/_custom_type_script = "uid://cco54qh1yi8uh"
 
 [sub_resource type="Resource" id="Resource_lgj6m"]
-script = ExtResource("1_qsfnc")
+script = ExtResource("1_fobrt")
 enable = true
 entity_id = "Gyser"
 entity_type = 0
-scene = ExtResource("4_gqcgg")
+scene = ExtResource("6_d0g52")
 entity_params_map = Dictionary[String, String]({})
 level_data_params = Dictionary[String, String]({})
 add_node = false
@@ -76,11 +77,11 @@ add_node_param_name = ""
 metadata/_custom_type_script = "uid://cco54qh1yi8uh"
 
 [sub_resource type="Resource" id="Resource_1rydy"]
-script = ExtResource("1_qsfnc")
+script = ExtResource("1_fobrt")
 enable = true
 entity_id = "PlayerStartPos"
 entity_type = 0
-scene = ExtResource("3_bblh8")
+scene = ExtResource("7_yk1td")
 entity_params_map = Dictionary[String, String]({})
 level_data_params = Dictionary[String, String]({})
 add_node = false
@@ -88,11 +89,11 @@ add_node_param_name = ""
 metadata/_custom_type_script = "uid://cco54qh1yi8uh"
 
 [sub_resource type="Resource" id="Resource_m4fqp"]
-script = ExtResource("1_qsfnc")
+script = ExtResource("1_fobrt")
 enable = true
 entity_id = "SafePoint"
 entity_type = 0
-scene = ExtResource("5_1rydy")
+scene = ExtResource("8_2olou")
 entity_params_map = Dictionary[String, String]({
 "SafePointId": "safe_point_id"
 })
@@ -101,16 +102,29 @@ add_node = false
 add_node_param_name = ""
 metadata/_custom_type_script = "uid://cco54qh1yi8uh"
 
+[sub_resource type="Resource" id="Resource_gnjwl"]
+script = ExtResource("1_fobrt")
+enable = true
+entity_id = "Rock"
+entity_type = 0
+scene = ExtResource("9_uehib")
+entity_params_map = Dictionary[String, String]({})
+level_data_params = Dictionary[String, String]({})
+add_node = false
+add_node_param_name = ""
+metadata/_custom_type_script = "uid://cco54qh1yi8uh"
+
 [resource]
-script = ExtResource("2_lqbd1")
+script = ExtResource("10_mjv05")
 enum_importers = Dictionary[String, Script]({})
-importers = Dictionary[String, ExtResource("1_qsfnc")]({
+importers = Dictionary[String, ExtResource("1_fobrt")]({
 "CameraHook": SubResource("Resource_gqcgg"),
 "Enemy": SubResource("Resource_aa3ru"),
 "EvolutionChamber": SubResource("Resource_eeo3p"),
 "FallingSpike": SubResource("Resource_5cuvf"),
 "Gyser": SubResource("Resource_lgj6m"),
 "PlayerStartPos": SubResource("Resource_1rydy"),
+"Rock": SubResource("Resource_gnjwl"),
 "SafePoint": SubResource("Resource_m4fqp")
 })
 metadata/_custom_type_script = "uid://djh4l8ie3nn5h"

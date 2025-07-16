@@ -12,7 +12,7 @@ var direction = 1
 
 @onready var player_detector: RayCast2D = $PlayerDetector
 @onready var hitbox: Hitbox2D = $Hitbox2D
-
+@onready var health: HealthCommponet = $HealthCommponet 
 
 var can_attack: bool = true
 
@@ -21,6 +21,7 @@ var is_attacking: bool
 
 func _ready() -> void:
 	anim.animation_finished.connect(_on_animation_finished)
+	health.hp_zero.connect(queue_free)
 
 func _on_animation_finished(anim_name: String) -> void:
 	if anim_name == "attack":
