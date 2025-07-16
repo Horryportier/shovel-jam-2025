@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://diouo3cus0jsc"]
 
 [ext_resource type="Texture2D" uid="uid://bu8nc6ue8lkv0" path="res://icon.svg" id="1_0uvn6"]
-[ext_resource type="Script" path="res://scenes/Player/player_3.gd" id="1_wid3a"]
-[ext_resource type="Script" path="res://scenes/Player/grapple_controller.gd" id="3_iaduf"]
+[ext_resource type="Script" uid="uid://b3e5166cl3y51" path="res://scenes/Player/player_3.gd" id="1_wid3a"]
+[ext_resource type="Script" uid="uid://ikkuxynowo5d" path="res://scenes/Player/grapple_controller.gd" id="3_iaduf"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wid3a"]
 height = 46.0
