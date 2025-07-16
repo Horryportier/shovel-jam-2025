@@ -1,15 +1,15 @@
 [gd_scene load_steps=7 format=3 uid="uid://wp40rxp54ljg"]
 
 [ext_resource type="Script" uid="uid://bylcrfix5mv1k" path="res://scenes/GrabObject/grab_object.gd" id="1_3lmhg"]
-[ext_resource type="Texture2D" uid="uid://cqdcjrg5v22g5" path="res://assets/tilemaps/tilemap1.png" id="2_3lmhg"]
+[ext_resource type="Texture2D" uid="uid://ce10p11d3iket" path="res://assets/tilemaps/tilemap1.png" id="2_3lmhg"]
 [ext_resource type="Script" uid="uid://jb5gmyd8qbfe" path="res://scripts/Commponets/hitbox.gd" id="2_poqsr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ftolh"]
 atlas = ExtResource("2_3lmhg")
 region = Rect2(288, 224, 32, 32)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_poqsr"]
-size = Vector2(20, 22)
+[sub_resource type="CircleShape2D" id="CircleShape2D_3lmhg"]
+radius = 9.21954
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ftolh"]
 radius = 15.0333
@@ -25,7 +25,8 @@ texture = SubResource("AtlasTexture_ftolh")
 offset = Vector2(0, -2)
 
 [node name="Shape" type="CollisionShape2D" parent="." groups=["Pickable"]]
-shape = SubResource("RectangleShape2D_poqsr")
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_3lmhg")
 
 [node name="Hitbox2D" type="Area2D" parent="."]
 collision_layer = 32
