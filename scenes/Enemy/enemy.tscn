@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://jwmg1tl3nxb8"]
+[gd_scene load_steps=19 format=3 uid="uid://jwmg1tl3nxb8"]
 
 [ext_resource type="Script" uid="uid://0adr23a0sun3" path="res://scenes/Enemy/enemy.gd" id="1_vamnb"]
 [ext_resource type="Script" uid="uid://qtjlvk576t6b" path="res://scripts/Commponets/health_commponet.gd" id="2_o5uld"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dr6wcuu2xbahr" path="res://assets/enemy/crock_enemy_FLegBack_000.png" id="6_pg6jp"]
 [ext_resource type="Texture2D" uid="uid://bahnc1dcsio3i" path="res://assets/enemy/crock_enemy_FLegFront_000.png" id="7_lkp36"]
 [ext_resource type="Texture2D" uid="uid://b4n8j2q14rnr4" path="res://assets/enemy/crock_enemy_HeadTop_000.png" id="8_q0kbr"]
+[ext_resource type="Script" uid="uid://c2mi6l2q2l48q" path="res://scripts/Commponets/on_dmg_commponent.gd" id="9_fx0l5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o5uld"]
 size = Vector2(90, 36)
@@ -311,7 +312,7 @@ attack_delay = 1.5
 
 [node name="HealthCommponet" type="Node" parent="."]
 script = ExtResource("2_o5uld")
-max_health = 80
+max_health = 120
 metadata/_custom_type_script = "uid://qtjlvk576t6b"
 
 [node name="Visual" type="Node2D" parent="."]
@@ -343,6 +344,11 @@ offset = Vector2(6, 6)
 position = Vector2(30, -2)
 texture = ExtResource("8_q0kbr")
 offset = Vector2(6, 1)
+
+[node name="OnDmgCommponent" type="Node" parent="Visual" node_paths=PackedStringArray("health")]
+script = ExtResource("9_fx0l5")
+health = NodePath("../../HealthCommponet")
+metadata/_custom_type_script = "uid://c2mi6l2q2l48q"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4)

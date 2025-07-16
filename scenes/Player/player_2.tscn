@@ -1,8 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://cmf0tu3rb8rv4"]
+[gd_scene load_steps=13 format=3 uid="uid://cmf0tu3rb8rv4"]
 
 [ext_resource type="Script" uid="uid://8nqlrurw6tfh" path="res://scenes/Player/player_2.gd" id="1_l67ws"]
 [ext_resource type="Texture2D" uid="uid://ri3mkt511m6h" path="res://assets/player/player_evo_2.png" id="2_l67ws"]
+[ext_resource type="Script" uid="uid://qtjlvk576t6b" path="res://scripts/Commponets/health_commponet.gd" id="2_lg01t"]
 [ext_resource type="Script" uid="uid://vljncnon2nfc" path="res://scripts/Commponets/hurtbox.gd" id="3_ikgcu"]
+[ext_resource type="Script" uid="uid://c2mi6l2q2l48q" path="res://scripts/Commponets/on_dmg_commponent.gd" id="4_vmwkb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ljpki"]
 size = Vector2(22, 29.25)
@@ -56,14 +58,20 @@ radius = 12.0416
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_l67ws")
+throw_force = 400.0
 speed = 240.0
 jump_velocity = -360.0
+
+[node name="HealthCommponet" type="Node" parent="."]
+script = ExtResource("2_lg01t")
+max_health = 100
+metadata/_custom_type_script = "uid://qtjlvk576t6b"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ljpki")
 
 [node name="GrabPoint" type="Marker2D" parent="."]
-position = Vector2(9, 1)
+position = Vector2(11, 1)
 
 [node name="GrabArea" type="Area2D" parent="."]
 collision_layer = 2
@@ -75,6 +83,11 @@ shape = SubResource("RectangleShape2D_jetqy")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vmwkb")
 animation = &"walk"
+
+[node name="OnDmgCommponent" type="Node" parent="AnimatedSprite2D" node_paths=PackedStringArray("health")]
+script = ExtResource("4_vmwkb")
+health = NodePath("../../HealthCommponet")
+metadata/_custom_type_script = "uid://c2mi6l2q2l48q"
 
 [node name="Hurtbox2D" type="Area2D" parent="."]
 collision_layer = 2

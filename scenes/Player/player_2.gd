@@ -71,6 +71,7 @@ func try_grab():
 			held_object.reparent(grab_point, false)
 			held_object.global_position = grab_point.global_position
 			held_object.freeze = true
+			held_object.z_index = 1
 			held_object.linear_velocity = Vector2.ZERO
 			return
 
@@ -78,6 +79,7 @@ func try_grab():
 func release_object():
 	held_object.reparent(world)
 	held_object.freeze = false
+	held_object.z_index = 0
 	held_object = null
 
 
@@ -89,5 +91,6 @@ func throw_object():
 	held_object.freeze = false
 	held_object.reparent(world)
 	held_object.apply_impulse(direction * throw_force)
+	held_object.z_index = 0
 
 	held_object = null

@@ -1,8 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://wp40rxp54ljg"]
+[gd_scene load_steps=7 format=3 uid="uid://wp40rxp54ljg"]
 
 [ext_resource type="Script" uid="uid://bylcrfix5mv1k" path="res://scenes/GrabObject/grab_object.gd" id="1_3lmhg"]
-[ext_resource type="Texture2D" uid="uid://bu8nc6ue8lkv0" path="res://icon.svg" id="1_it3bp"]
+[ext_resource type="Texture2D" uid="uid://cqdcjrg5v22g5" path="res://assets/tilemaps/tilemap1.png" id="2_3lmhg"]
 [ext_resource type="Script" uid="uid://jb5gmyd8qbfe" path="res://scripts/Commponets/hitbox.gd" id="2_poqsr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ftolh"]
+atlas = ExtResource("2_3lmhg")
+region = Rect2(288, 224, 32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_poqsr"]
 size = Vector2(20, 22)
@@ -17,8 +21,8 @@ script = ExtResource("1_3lmhg")
 
 [node name="ObjImg" type="Sprite2D" parent="."]
 position = Vector2(9.53674e-07, -4.76837e-07)
-scale = Vector2(0.171875, 0.1875)
-texture = ExtResource("1_it3bp")
+texture = SubResource("AtlasTexture_ftolh")
+offset = Vector2(0, -2)
 
 [node name="Shape" type="CollisionShape2D" parent="." groups=["Pickable"]]
 shape = SubResource("RectangleShape2D_poqsr")
