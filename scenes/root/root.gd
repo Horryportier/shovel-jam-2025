@@ -13,7 +13,8 @@ signal level_loaded
 @export var satrt_safe_point: int = 1
 @export_group("visual")
 @export var sky_color_ovre_time: Gradient
-@export var time_length: float
+@export var brightness: float = 2
+@export var day_length: float = 10
 
 @onready var world: Node2D = %World
 @onready var sun: DirectionalLight2D = %Sun
@@ -45,6 +46,13 @@ func _ready() -> void:
 	level_loaded.emit()
 	Game.player_died.connect(_on_player_died)
 	screen_tint.color = sky_color_ovre_time.sample(1)
+
+func _process(delta: float) -> void:
+	time += delta 
+	if time / 60 >= day_length:
+		time = 0
+	var time_color: Color = sky_color_ovre_time.sample(remap(time / 60, 0, 10, 0, 1)) * brightness
+	screen_tint.color = time_color.clamp()
 
 func _on_player_died() -> void:
 	var player = Game.get_player()

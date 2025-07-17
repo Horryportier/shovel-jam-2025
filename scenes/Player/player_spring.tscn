@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://b0k36rgkh1uau"]
+
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" groups=["PlayerSpring"]]
+rest_length = 128.0
