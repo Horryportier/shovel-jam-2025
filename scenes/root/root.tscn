@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b31dsikhx38qu"]
+[gd_scene load_steps=15 format=3 uid="uid://b31dsikhx38qu"]
 
 [ext_resource type="PackedScene" uid="uid://byrx74x5p6wc1" path="res://scenes/ldtk/levels.ldtk" id="1_2yu1p"]
 [ext_resource type="Script" uid="uid://50pu1o70bm0e" path="res://scenes/root/root.gd" id="1_f1tf0"]
@@ -13,6 +13,10 @@
 [ext_resource type="Texture2D" uid="uid://cklscebf362n1" path="res://assets/ui/health_bar_Over_000.png" id="10_7ba2d"]
 [ext_resource type="Texture2D" uid="uid://b6iubjuq0nef2" path="res://assets/ui/health_bar_Progerss_000.png" id="11_sq6te"]
 
+[sub_resource type="Curve" id="Curve_7ba2d"]
+_data = [Vector2(0, 0.087334), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.0794933), 0.0, 0.0, 0, 0]
+point_count = 3
+
 [sub_resource type="Gradient" id="Gradient_3sdhb"]
 offsets = PackedFloat32Array(0, 0.145714, 0.174286, 0.211429, 0.482857, 0.745714, 0.791429, 0.84, 1)
 colors = PackedColorArray(0.415686, 0.529412, 0.772549, 1, 0.535325, 0.458485, 0.728766, 1, 0.788235, 0.615686, 0.827451, 1, 0.977935, 0.840852, 0.74831, 1, 0.939518, 0.936443, 0.884159, 1, 0.976471, 0.839216, 0.74902, 1, 0.788511, 0.616284, 0.827479, 1, 0.537255, 0.458824, 0.729412, 1, 0.417091, 0.52899, 0.771349, 1)
@@ -23,8 +27,7 @@ ldtk_world = ExtResource("1_2yu1p")
 dev_world = ExtResource("3_cj6gr")
 player_evolutions = Array[PackedScene]([ExtResource("4_3sdhb"), ExtResource("4_rskmp"), ExtResource("6_swrb0"), ExtResource("7_q31ox")])
 player_spawn_pos = Vector2(180, 300)
-start_evo = 2
-satrt_safe_point = 3
+sun_energy_curve = SubResource("Curve_7ba2d")
 sky_color_ovre_time = SubResource("Gradient_3sdhb")
 brightness = 1.5
 

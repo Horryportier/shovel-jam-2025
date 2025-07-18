@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://b173wg5go8uki"]
 
 [ext_resource type="Script" uid="uid://dfg8j7q7wo1tm" path="res://scenes/objects/gyser.gd" id="1_abyy6"]
-[ext_resource type="Texture2D" uid="uid://cqdcjrg5v22g5" path="res://assets/tilemaps/tilemap1.png" id="1_srtq5"]
+[ext_resource type="Texture2D" uid="uid://ce10p11d3iket" path="res://assets/tilemaps/tilemap1.png" id="1_srtq5"]
 [ext_resource type="Texture2D" uid="uid://e5vivkxavsi3" path="res://assets/particles/gyser_particles.png" id="2_abyy6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6c8qd"]
@@ -44,11 +44,13 @@ color_initial_ramp = SubResource("GradientTexture1D_bnxhf")
 anim_offset_max = 1.0
 
 [node name="Gyser" type="Node2D"]
+z_index = 1
 script = ExtResource("1_abyy6")
 up_force = -1000.0
 on_time = 4.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_as_relative = false
 texture = SubResource("AtlasTexture_6c8qd")
 
 [node name="Area2D" type="Area2D" parent="."]
