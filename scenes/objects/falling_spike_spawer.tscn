@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ct4se8p2c1bc3" path="res://scenes/objects/falling_spike_spawer.gd" id="1_epw58"]
 [ext_resource type="PackedScene" uid="uid://cxixsx8andg17" path="res://scenes/objects/falling_spike.tscn" id="2_0rhxw"]
-[ext_resource type="Texture2D" uid="uid://cqdcjrg5v22g5" path="res://assets/tilemaps/tilemap1.png" id="2_ew4ia"]
+[ext_resource type="Texture2D" uid="uid://ce10p11d3iket" path="res://assets/tilemaps/tilemap1.png" id="2_ew4ia"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0rhxw"]
 atlas = ExtResource("2_ew4ia")
