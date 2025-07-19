@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://m4wg7r24y6en"]
+[gd_scene load_steps=15 format=3 uid="uid://m4wg7r24y6en"]
 
 [ext_resource type="Script" uid="uid://bgesxmcb4ocnt" path="res://scenes/Player/player.gd" id="1_1kbk7"]
 [ext_resource type="Texture2D" uid="uid://dv46nimxldd0c" path="res://assets/player/player_evo_0.png" id="2_1kbk7"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://qtjlvk576t6b" path="res://scripts/Commponets/health_commponet.gd" id="4_c4h5g"]
 [ext_resource type="Script" uid="uid://c2mi6l2q2l48q" path="res://scripts/Commponets/on_dmg_commponent.gd" id="4_hvfru"]
 [ext_resource type="Script" uid="uid://vljncnon2nfc" path="res://scripts/Commponets/hurtbox.gd" id="5_uiqp4"]
+[ext_resource type="AudioStream" uid="uid://bcyb7leqd36kc" path="res://assets/SFX/Hurt.mp3" id="7_a06cl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gqjuk"]
 atlas = ExtResource("2_1kbk7")
@@ -98,3 +99,6 @@ metadata/_custom_type_script = "uid://vljncnon2nfc"
 position = Vector2(0, -2)
 shape = SubResource("CircleShape2D_hvfru")
 debug_color = Color(3.85046e-07, 0.649674, 0.134187, 0.42)
+
+[node name="Hurt" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_a06cl")
