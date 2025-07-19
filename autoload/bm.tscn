@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxfyg0woapuc7"]
+
+[ext_resource type="AudioStream" uid="uid://cj674uagsfnm5" path="res://assets/Music/Sunlight Through Leaves.mp3" id="1_rt83b"]
+
+[node name="BM" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_rt83b")
+autoplay = true
