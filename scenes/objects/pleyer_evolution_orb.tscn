@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://birhjowx6beqj"]
+[gd_scene load_steps=11 format=3 uid="uid://birhjowx6beqj"]
 
 [ext_resource type="Script" uid="uid://ck7al2tscoatw" path="res://scenes/objects/pleyer_evolution_orb.gd" id="1_abb0x"]
 [ext_resource type="Texture2D" uid="uid://d2olilnf6rcqr" path="res://assets/player/evo_chamber.png" id="2_abb0x"]
 [ext_resource type="Texture2D" uid="uid://daa0gw74fw1on" path="res://assets/effects/blur_64x64.png" id="3_55hem"]
+[ext_resource type="AudioStream" uid="uid://54flahutny0o" path="res://assets/SFX/Evo.mp3" id="4_ks65d"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ypbpq"]
 radius = 62.0
@@ -220,3 +221,6 @@ texture = ExtResource("3_55hem")
 libraries = {
 &"": SubResource("AnimationLibrary_fsfax")
 }
+
+[node name="Evo" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ks65d")

@@ -3,6 +3,7 @@ extends Area2D
 @export var next_evolution: int
 @export var safe_point: int
 @onready var anim: AnimationPlayer = $AnimationPlayer
+@onready var evo: AudioStreamPlayer2D = $Evo
 
 
 var player: CharacterBody2D
@@ -21,6 +22,7 @@ func _on_body_entered(body: Node2D) -> void:
 			return
 		player = Game.get_player()
 		anim.play("transform")
+		evo.play()
 		await anim.animation_finished
 		var new_player: CharacterBody2D = scene.instantiate()
 		new_player.global_position = global_position

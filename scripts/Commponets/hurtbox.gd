@@ -21,4 +21,3 @@ func take_dmg(dmg: int) -> bool:
 			get_tree().create_timer(iframe_duration).timeout.connect(func(): enable = true)
 		return true
 	return false
-
