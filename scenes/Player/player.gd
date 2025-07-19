@@ -39,4 +39,3 @@ func _physics_process(delta: float) -> void:
 		anim.play("walk")
 	anim.flip_h = velocity.x < 0
 	move_and_slide()
-
