@@ -2095,22 +2095,6 @@
 						},
 						{
 							"__identifier": "FallingSpike",
-							"__grid": [122,3],
-							"__pivot": [0,0],
-							"__tags": [],
-							"__tile": { "tilesetUid": 1, "x": 32, "y": 320, "w": 32, "h": 64 },
-							"__smartColor": "#5A6988",
-							"iid": "c7c90820-5e50-11f0-80e6-e775e7e5384c",
-							"width": 32,
-							"height": 64,
-							"defUid": 57,
-							"px": [1952,48],
-							"fieldInstances": [{ "__identifier": "SpawnDuration", "__type": "Float", "__value": 3, "__tile": null, "defUid": 58, "realEditorValues": [{ "id": "V_Float", "params": [3] }] }],
-							"__worldX": 1952,
-							"__worldY": 48
-						},
-						{
-							"__identifier": "FallingSpike",
 							"__grid": [131,3],
 							"__pivot": [0,0],
 							"__tags": [],
@@ -2123,22 +2107,6 @@
 							"px": [2096,48],
 							"fieldInstances": [{ "__identifier": "SpawnDuration", "__type": "Float", "__value": 5, "__tile": null, "defUid": 58, "realEditorValues": [] }],
 							"__worldX": 2096,
-							"__worldY": 48
-						},
-						{
-							"__identifier": "FallingSpike",
-							"__grid": [139,3],
-							"__pivot": [0,0],
-							"__tags": [],
-							"__tile": { "tilesetUid": 1, "x": 32, "y": 320, "w": 32, "h": 64 },
-							"__smartColor": "#5A6988",
-							"iid": "d114a3d0-5e50-11f0-80e6-2b2690188d35",
-							"width": 32,
-							"height": 64,
-							"defUid": 57,
-							"px": [2224,48],
-							"fieldInstances": [{ "__identifier": "SpawnDuration", "__type": "Float", "__value": 4, "__tile": null, "defUid": 58, "realEditorValues": [{ "id": "V_Float", "params": [4] }] }],
-							"__worldX": 2224,
 							"__worldY": 48
 						},
 						{
@@ -20913,6 +20881,22 @@
 							"fieldInstances": [],
 							"__worldX": 632,
 							"__worldY": -2872
+						},
+						{
+							"__identifier": "SafePoint",
+							"__grid": [124,44],
+							"__pivot": [0,0],
+							"__tags": [],
+							"__tile": null,
+							"__smartColor": "#63C74D",
+							"iid": "6e65c040-5e50-11f0-8ff8-8337ca0f95a2",
+							"width": 32,
+							"height": 32,
+							"defUid": 55,
+							"px": [1984,704],
+							"fieldInstances": [{ "__identifier": "SafePointId", "__type": "Int", "__value": 10, "__tile": null, "defUid": 56, "realEditorValues": [{ "id": "V_Int", "params": [10] }] }],
+							"__worldX": 1984,
+							"__worldY": -2880
 						}
 					]
 				},

@@ -13,6 +13,7 @@ signal level_loaded
 @export var start_safe_point: int = 1
 @export_group("visual")
 @export var sky_color_ovre_time: Gradient
+@export var sky_bg_color_ovre_time: Gradient
 @export var sun_energy_curve: Curve
 @export var brightness: float = 2
 @export var day_length: float = 10
@@ -55,10 +56,11 @@ func _process(delta: float) -> void:
 		time = 0
 	var time_noramlized: = remap(time / 60, 0, day_length, 0, 1)
 	var time_color: Color = (sky_color_ovre_time.sample(time_noramlized) * brightness).clamp()
+	var bg_time_color:  Color = sky_bg_color_ovre_time.sample(time_noramlized).clamp()
 	screen_tint.color = time_color
 	sun.energy = sun_energy_curve.sample(time_noramlized)
 	sun.rotation =  deg_to_rad(180 + remap(time_noramlized, 0, 1 , 0, 360))
-	RenderingServer.set_default_clear_color(time_color)
+	RenderingServer.set_default_clear_color(bg_time_color)
 
 func _on_player_died() -> void:
 	var player = Game.get_player()
