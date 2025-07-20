@@ -35,10 +35,10 @@ func _physics_process(delta: float) -> void:
 			cayote_timer = null
 		can_jump = true
 	
-	if Input.is_action_just_pressed("CROUCH"):
+	if Input.is_action_pressed("CROUCH"):
 		is_crouching = true
-	if Input.is_action_just_pressed("CROUCH"):
-		get_tree().create_timer(cayote_jump).timeout.connect(func () -> void:is_crouching = false)
+	if Input.is_action_just_released("CROUCH"):
+		get_tree().create_timer(cayote_jump).timeout.connect(func () -> void: is_crouching = false)
 
 	if Input.is_action_just_pressed("JUMP") and can_jump:
 		if is_crouching:

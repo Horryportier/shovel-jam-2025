@@ -33,6 +33,12 @@ func _physics_process(delta):
 			cayote_timer = null
 			can_jump = true	# Jump
 
+
+	if Input.is_action_pressed("CROUCH"):
+		is_crouching = true
+	if Input.is_action_just_released("CROUCH"):
+		get_tree().create_timer(cayote_jump).timeout.connect(func () -> void: is_crouching = false)
+
 	if Input.is_action_just_pressed("JUMP") and can_jump:
 		if is_crouching:
 			velocity.y = jump_velocity * crouch_jump_ratio
@@ -46,7 +52,7 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 
-	is_crouching = Input.is_action_pressed("CROUCH")
+
 	if velocity.is_zero_approx():
 		anim.play("idle")
 	else:

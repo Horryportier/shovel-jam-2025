@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b31dsikhx38qu"]
+[gd_scene load_steps=22 format=3 uid="uid://b31dsikhx38qu"]
 
 [ext_resource type="PackedScene" uid="uid://byrx74x5p6wc1" path="res://scenes/ldtk/levels.ldtk" id="1_2yu1p"]
 [ext_resource type="Script" uid="uid://50pu1o70bm0e" path="res://scenes/root/root.gd" id="1_f1tf0"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://66t88k2xoh2m" path="res://scenes/ui/hud.gd" id="9_7ba2d"]
 [ext_resource type="Texture2D" uid="uid://cklscebf362n1" path="res://assets/ui/health_bar_Over_000.png" id="10_7ba2d"]
 [ext_resource type="Texture2D" uid="uid://b6iubjuq0nef2" path="res://assets/ui/health_bar_Progerss_000.png" id="11_sq6te"]
+[ext_resource type="Texture2D" uid="uid://ce10p11d3iket" path="res://assets/tilemaps/tilemap1.png" id="13_sq6te"]
 
 [sub_resource type="Gradient" id="Gradient_3sdhb"]
 offsets = PackedFloat32Array(0, 0.145714, 0.174286, 0.211429, 0.482857, 0.745714, 0.791429, 0.84, 1)
@@ -25,18 +26,35 @@ colors = PackedColorArray(0.191898, 0.276125, 0.462905, 1, 0.535325, 0.458485, 0
 _data = [Vector2(0, 0.087334), 0.0, 0.0, 0, 0, Vector2(0.5, 0.491743), 0.0, 0.0, 0, 0, Vector2(1, 0.0794933), 0.0, 0.0, 0, 0]
 point_count = 3
 
+[sub_resource type="Curve" id="Curve_sq6te"]
+_data = [Vector2(1e-05, 0), 0.0, 0.0, 0, 0, Vector2(0.136388, 0.398986), 0.677134, 0.677134, 0, 0, Vector2(0.807672, 0.782286), 0.0822232, 0.0822232, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Curve" id="Curve_a1qps"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.250932, 0.248974), 0.0, 0.0, 0, 0, Vector2(1, 0.996934), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1qps"]
+atlas = ExtResource("13_sq6te")
+region = Rect2(1216, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sq6te"]
+atlas = ExtResource("13_sq6te")
+region = Rect2(1216, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m7xoi"]
+atlas = ExtResource("13_sq6te")
+region = Rect2(1216, 96, 32, 32)
+
 [node name="Root" type="Node" groups=["Root"]]
 script = ExtResource("1_f1tf0")
 ldtk_world = ExtResource("1_2yu1p")
 dev_world = ExtResource("3_cj6gr")
 player_evolutions = Array[PackedScene]([ExtResource("4_3sdhb"), ExtResource("4_rskmp"), ExtResource("6_swrb0"), ExtResource("7_q31ox")])
 player_spawn_pos = Vector2(180, 300)
-start_evo = 2
-start_safe_point = 3
 sky_color_ovre_time = SubResource("Gradient_3sdhb")
 sky_bg_color_ovre_time = SubResource("Gradient_7ba2d")
 sun_energy_curve = SubResource("Curve_7ba2d")
-brightness = 1.5
 
 [node name="World" type="Node2D" parent="." groups=["World"]]
 unique_name_in_owner = true
@@ -66,6 +84,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("9_7ba2d")
+volume_curve = SubResource("Curve_sq6te")
+brightness_curve = SubResource("Curve_a1qps")
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control"]
 layout_mode = 0
@@ -82,3 +102,50 @@ texture_under = ExtResource("9_3nfyn")
 texture_over = ExtResource("10_7ba2d")
 texture_progress = ExtResource("11_sq6te")
 texture_progress_offset = Vector2(2, -1)
+
+[node name="Settings" type="MarginContainer" parent="CanvasLayer/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control/Settings"]
+layout_mode = 2
+color = Color(0.317647, 0.552941, 0.639216, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/Settings"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="VolumeSlider" type="HSlider" parent="CanvasLayer/Control/Settings/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(512, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_icons/grabber = SubResource("AtlasTexture_a1qps")
+theme_override_icons/grabber_highlight = SubResource("AtlasTexture_a1qps")
+theme_override_icons/grabber_disabled = SubResource("AtlasTexture_a1qps")
+theme_override_icons/tick = SubResource("AtlasTexture_a1qps")
+value = 1.0
+
+[node name="BrightnessSlider" type="HSlider" parent="CanvasLayer/Control/Settings/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(512, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_icons/grabber = SubResource("AtlasTexture_sq6te")
+value = 1.0
+
+[node name="Exitbutton" type="TextureButton" parent="CanvasLayer/Control/Settings/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = SubResource("AtlasTexture_m7xoi")
+stretch_mode = 0

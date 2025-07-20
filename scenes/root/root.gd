@@ -15,7 +15,6 @@ signal level_loaded
 @export var sky_color_ovre_time: Gradient
 @export var sky_bg_color_ovre_time: Gradient
 @export var sun_energy_curve: Curve
-@export var brightness: float = 2
 @export var day_length: float = 10
 
 @onready var world: Node2D = %World
@@ -55,7 +54,7 @@ func _process(delta: float) -> void:
 	if time / 60 >= day_length:
 		time = 0
 	var time_noramlized: = remap(time / 60, 0, day_length, 0, 1)
-	var time_color: Color = (sky_color_ovre_time.sample(time_noramlized) * brightness).clamp()
+	var time_color: Color = (sky_color_ovre_time.sample(time_noramlized) * Game.brightness).clamp()
 	var bg_time_color:  Color = sky_bg_color_ovre_time.sample(time_noramlized).clamp()
 	screen_tint.color = time_color
 	sun.energy = sun_energy_curve.sample(time_noramlized)

@@ -3,6 +3,7 @@ extends Node
 signal player_changed
 signal player_died
 
+
 var player: CharacterBody2D:
 	set(val):
 		if player != val:
@@ -11,6 +12,9 @@ var player: CharacterBody2D:
 		
 
 var current_spawn_point: int = 1
+
+var brightness: float = 1
+
 
 func get_evolution_scene(id: int) -> PackedScene:
 	var root: GameRoot = get_tree().get_first_node_in_group("Root")
