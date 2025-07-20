@@ -22,8 +22,6 @@ signal level_loaded
 @onready var screen_tint: CanvasModulate = %ScreenTint
 
 
-
-
 var time: float
 
 func _ready() -> void:
@@ -48,6 +46,7 @@ func _ready() -> void:
 	level_loaded.emit()
 	Game.player_died.connect(_on_player_died)
 	screen_tint.color = sky_color_ovre_time.sample(1)
+	Bm.play()
 
 func _process(delta: float) -> void:
 	time += delta 

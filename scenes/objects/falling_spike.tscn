@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cxixsx8andg17"]
 
 [ext_resource type="Script" uid="uid://bwub02mhw6vrp" path="res://scenes/objects/falling_spike.gd" id="1_3nhlk"]
-[ext_resource type="Texture2D" uid="uid://cqdcjrg5v22g5" path="res://assets/tilemaps/tilemap1.png" id="1_8or4o"]
+[ext_resource type="Texture2D" uid="uid://ce10p11d3iket" path="res://assets/tilemaps/tilemap1.png" id="1_8or4o"]
 [ext_resource type="Script" uid="uid://jb5gmyd8qbfe" path="res://scripts/Commponets/hitbox.gd" id="3_ydooy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3nhlk"]

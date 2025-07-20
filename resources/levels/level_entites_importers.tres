@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="LdtkEntityImporters" load_steps=21 format=3 uid="uid://705g14mxrfbn"]
 
-[ext_resource type="Script" uid="uid://cco54qh1yi8uh" path="res://scripts/Importers/entitiy_importer.gd" id="1_qsfnc"]
+[ext_resource type="Script" path="res://scripts/Importers/entitiy_importer.gd" id="1_qsfnc"]
 [ext_resource type="PackedScene" uid="uid://b6miotaofgpuu" path="res://scenes/objects/camera_hook.tscn" id="2_bblh8"]
-[ext_resource type="Script" uid="uid://djh4l8ie3nn5h" path="res://scripts/Importers/entitiy_imorters.gd" id="2_lqbd1"]
+[ext_resource type="Script" path="res://scripts/Importers/entitiy_imorters.gd" id="2_lqbd1"]
 [ext_resource type="PackedScene" uid="uid://cu7epean3unur" path="res://scenes/objects/player_start_pos.tscn" id="3_bblh8"]
 [ext_resource type="PackedScene" uid="uid://b173wg5go8uki" path="res://scenes/objects/gyser.tscn" id="4_gqcgg"]
 [ext_resource type="PackedScene" uid="uid://cn8beiqqw46af" path="res://scenes/objects/safe_point.tscn" id="5_1rydy"]
