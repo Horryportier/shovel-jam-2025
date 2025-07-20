@@ -55,7 +55,6 @@ color = Color(0.664177, 0.664177, 0.664177, 1)
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
 script = ExtResource("5_rskmp")
-smoothing_exponent = -2.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
